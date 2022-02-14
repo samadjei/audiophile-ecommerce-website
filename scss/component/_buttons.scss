@@ -1,0 +1,57 @@
+// Base Button Styling
+.btn {
+	display: inline-block;
+	font-weight: 700;
+	border-radius: 2.8rem;
+	border: none;
+	&:hover,
+	&:focus {
+		cursor: pointer;
+	}
+}
+
+// btn placeholder
+%btn {
+	padding: 2rem 4rem;
+}
+
+// BUTTON STYLES
+
+// First Button
+.btn--primary {
+	// &:hover,
+	// &:focus {
+
+	// }
+	// if you want selector to share something, this is where @extends comes into play
+	// @extend %btn;
+}
+
+// Second Button
+
+.btn--secondary {
+	// &:hover,
+	// &:focus {
+
+	// }
+	// @extend %btn;
+}
+
+// Third Button
+.btn--tertiary {
+	// &:hover,
+	// &:focus {
+
+	// }
+}
+
+// Button Sizes
+
+// Desktop Button
+.btn--desktop {
+	width: 17.1rem;
+	height: 5.6rem;
+	margin: 0 auto;
+	// padding: 1.4rem 4.1rem;
+	font-size: 1.6rem;
+}
