@@ -1,3 +1,47 @@
-.title {
-	text-align: center;
+@use '../abstracts' as *;
+
+.hero {
+	background-image: url('../../public/assets/home/desktop/image-hero.jpg');
+	background-color: var(--black);
+	height: 84.4rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: 999;
+	margin-top: -11.5rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	&__inner {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	// Text
+	&__content {
+		width: 39.8rem;
+	}
+
+	&--subhead {
+		font-weight: var(--font-normal);
+		font-size: 1.4rem;
+		line-height: 1.9rem;
+		letter-spacing: 1rem;
+		text-transform: uppercase;
+		color: var(--white);
+		opacity: 0.5;
+	}
+
+	&--text {
+		font-weight: var(--font-semi-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		color: var(--white);
+		opacity: 0.75;
+		width: 34.9rem;
+		padding-top: 2.4rem;
+		padding-bottom: 4rem;
+	}
 }

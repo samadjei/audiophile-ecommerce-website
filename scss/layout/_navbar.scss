@@ -1,17 +1,66 @@
 @use '../abstracts' as *;
 
-.nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.navbar {
 	background: var(--black);
-	height: 9.6rem;
+	z-index: -1;
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 111rem;
+		max-width: 100%;
+		padding: 0 2rem;
+		margin: 0 auto;
+		height: 11.3rem;
+	}
+	@include breakpoint(xsmall) {
+		height: 9rem;
+	}
+
+	&__logo {
+		cursor: pointer;
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
 	&__links {
 		display: flex;
 		align-items: center;
-		&-items {
+		gap: 3.4rem;
+		&--items {
 			color: var(--white);
+			font-weight: var(--font-bold);
+			font-size: 1.3rem;
+			line-height: 2.5rem;
+			letter-spacing: 0.2rem;
+			transition: var(--transition-03);
+			&:hover,
+			&:focus {
+				color: var(--orange);
+			}
 		}
 	}
+
+	// Shopping
+	&__cart {
+		cursor: pointer;
+		display: none;
+	}
+}
+
+.hr-line {
+	border: 1px solid var(--white);
+	opacity: 0.2;
+	width: 111rem;
+	max-width: 100%;
+	margin: auto;
+}
+
+.logo {
+	width: 14.3rem;
+	height: 2.5rem;
 }

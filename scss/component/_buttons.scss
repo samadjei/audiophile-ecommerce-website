@@ -3,9 +3,11 @@
 	display: inline-block;
 	border: none;
 	cursor: pointer;
-	font-size: 1.6rem;
 	text-align: center;
 	text-transform: uppercase;
+	font-size: 1.3rem;
+	line-height: 1.8rem;
+	letter-spacing: 0.1rem;
 }
 
 // btn placeholder
@@ -19,9 +21,8 @@
 .btn--primary {
 	background: var(--orange);
 	font-weight: var(--font-bold);
-	line-height: 1.8rem;
 	letter-spacing: 1rem;
-	color: var(--black);
+	color: var(--white);
 	transition: var(--transition-04);
 	&:hover,
 	&:focus {
@@ -35,7 +36,6 @@
 	background: var(--white);
 	font-weight: var(--font-bold);
 	line-height: 1.8rem;
-	letter-spacing: 1rem;
 	color: var(--white);
 	transition: var(--transition-04);
 	&:hover,
