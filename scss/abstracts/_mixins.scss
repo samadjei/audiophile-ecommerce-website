@@ -25,3 +25,11 @@
 		transform: scale(1.05);
 	}
 }
+
+@mixin container() {
+	width: 111rem;
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 2rem;
+}

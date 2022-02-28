@@ -3,7 +3,7 @@ import Button from '../Button';
 const Hero = () => {
 	return (
 		<div className="hero">
-			<div className="container hero__inner">
+			<div className=" hero__inner">
 				<div className="hero__content ">
 					<span className="hero--subhead">New product</span>
 					<h1>XX99 Mark II Headphones</h1>
