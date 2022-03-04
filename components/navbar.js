@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Categories from './Categories';
 
 const Navbar = () => {
+	// Menu State
+	const [isOpen, setIsOpen] = useState(false);
+	const menuToggle = () => {
+		setIsOpen(!isOpen);
+	};
+
 	return (
-		<nav className="navbar ">
-			<div className="navbar__inner container">
+		<nav className={isOpen ? 'navbar' : 'navbar'}>
+			<div className="navbar__inner">
 				<div className="navbar__logo">
+					<div className="navbar__hamburger" onClick={menuToggle}>
+						<Image src="/assets/shared/tablet/icon-hamburger.svg" alt="Hamburger icon" width={16} height={15} />
+					</div>
 					<Link href="/">
 						<a>
 							<Image src="/assets/shared/desktop/logo.svg" alt="Audiophile logo" width={143} height={26} />
@@ -35,6 +45,7 @@ const Navbar = () => {
 				</div>
 			</div>
 			<hr className="hr-line" />
+			{isOpen ? <Categories className="inactive" /> : ''}
 		</nav>
 	);
 };

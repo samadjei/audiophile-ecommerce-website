@@ -19,18 +19,30 @@
 
 	&__logo {
 		cursor: pointer;
+		@include breakpoint(medium) {
+			display: flex;
+			align-items: center;
+			gap: 4.2rem;
+		}
+		@include breakpoint(small) {
+			gap: 7.6rem;
+		}
 	}
 
 	&__inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@include container;
 	}
 
 	&__links {
 		display: flex;
 		align-items: center;
 		gap: 3.4rem;
+		@include breakpoint(medium) {
+			display: none;
+		}
 		&--items {
 			color: var(--white);
 			font-weight: var(--font-bold);
@@ -48,7 +60,14 @@
 	// Shopping
 	&__cart {
 		cursor: pointer;
+	}
+
+	// Hamburger
+	&__hamburger {
 		display: none;
+		@include breakpoint(medium) {
+			display: block;
+		}
 	}
 }
 
@@ -63,4 +82,98 @@
 .logo {
 	width: 14.3rem;
 	height: 2.5rem;
+}
+
+// Menu
+.menu {
+	background: var(--white);
+	height: 40vh;
+	padding: 0rem 4rem;
+	@include breakpoint(small) {
+		height: 80vh;
+		padding: 0rem 2.4rem;
+	}
+
+	.inactive {
+		display: none;
+	}
+
+	.active {
+		display: block;
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+		padding-top: 10.8rem;
+
+		@include breakpoint(small) {
+			grid-template-columns: 1fr;
+			gap: 5rem;
+		}
+	}
+
+	&__card {
+		background: var(--grey);
+		height: 16.5rem;
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 8px;
+		position: relative;
+		padding-bottom: 2.2rem;
+	}
+
+	&__image {
+		position: absolute;
+		bottom: 60%;
+	}
+
+	&--title {
+		font-weight: var(--font-bold);
+		font-size: 1.5rem;
+		line-height: 2rem;
+		text-align: center;
+		letter-spacing: 1.07143px;
+		text-transform: uppercase;
+		color: var(--black);
+		padding-bottom: 1.7rem;
+	}
+
+	&--shop {
+		font-weight: var(--font-bold);
+		font-size: 1.3rem;
+		line-height: 1.8rem;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: var(--black);
+		opacity: 0.5;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			background: url('../../public/assets/shared/desktop/icon-arrow-right.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 0.5rem;
+			height: 1rem;
+			position: absolute;
+			right: -1rem;
+			top: 0.4rem;
+		}
+	}
+}
+
+.bg-cover {
+	background: var(--black);
+	mix-blend-mode: normal;
+	opacity: 0.4;
+	height: 100vh;
+	z-index: -99rem;
 }
