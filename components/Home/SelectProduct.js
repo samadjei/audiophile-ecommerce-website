@@ -6,9 +6,13 @@ const SelectProduct = () => {
 	return (
 		<section className="select">
 			<div className="select__speaker">
-				<div className="select__speaker-image">
-					<Image src="/assets/home/desktop/image-speaker-zx9.png" alt="Picture of the author" width={410} height={493} />
+				<div className="select__speaker-desktop">
+					<Image  src="/assets/home/desktop/image-speaker-zx9.png" alt="Picture of the author" width={410} height={493} />
 				</div>
+				<div className="select__speaker-tablet">
+					<Image src="/assets/home/tablet/image-speaker-zx9.png" alt="Picture of the author" width={200} height={240} />
+				</div>
+			
 				<div className="select__speaker-content">
 					<h2 className="select__speaker-header">ZX9 speaker</h2>
 					<p className="select__speaker-text">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>

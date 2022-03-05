@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 .hero {
-	background-image: url('../../public/assets/home/desktop/image-hero.jpg');
 	background-color: var(--black);
 	width: 100%;
 	height: 84.4rem;
@@ -10,16 +9,29 @@
 	background-size: cover;
 	z-index: 999;
 	margin-top: -11.5rem;
-	overflow: hidden;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	@include breakpoint(small) {
+		background-image: url('../../public/assets/home/mobile/image-header.jpg');
+	}
+	@include breakpoint(medium) {
+		background-image: url('../../public/assets/home/tablet/image-header.jpg');
+	}
+	@include breakpoint(large) {
+		background-image: url('../../public/assets/home/desktop/image-hero.jpg');
+	}
 
 	&__inner {
 		display: flex;
-		justify-content: flex-start;
+		justify-content: center;
+		text-align: center;
 		align-items: center;
 		@include container;
+		@include breakpoint(large) {
+			justify-content: flex-start;
+			text-align: left;
+		}
 	}
 
 	// Text
@@ -37,55 +49,98 @@
 		opacity: 0.5;
 	}
 
+	&--title {
+		margin-bottom: 0rem;
+	}
+
 	&--text {
 		font-weight: var(--font-semi-bold);
 		font-size: 1.5rem;
 		line-height: 2.5rem;
 		color: var(--white);
 		opacity: 0.75;
-		width: 34.9rem;
-		padding-top: 2.4rem;
-		padding-bottom: 4rem;
+		padding: 2.4rem 0;
+		@include breakpoint(medium) {
+			padding-top: 2.4rem;
+			padding-bottom: 4rem;
+			width: 34.9rem;
+		}
 	}
 }
 
 // Select product
 .select {
 	@include container;
-	padding-bottom: 20rem;
+	padding-top: 9.6rem;
+	padding-bottom: 9.6rem;
 	&__speaker {
 		background: var(--orange);
 		background-image: url('../../public/assets/home/desktop/pattern-circles.svg');
-		background-position: -10% 70%;
+		background-position: 50% -10%;
 		background-repeat: no-repeat;
-		background-size: 70%;
+		background-size: 100%;
 		display: flex;
 		justify-content: center;
-		align-items: flex-end;
-		height: 56rem;
-		gap: 13.9rem;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
 		border-radius: var(--border-radius-08);
 		overflow: hidden;
-		padding-left: 11rem;
-		padding-right: 9.5rem;
-		&-image {
-			margin-bottom: -2rem;
+		@include breakpoint(small) {
+			padding-right: 2.4rem;
+			padding-left: 2.4rem;
+			height: 60rem;
+		}
+		@include breakpoint(medium) {
+			height: 56rem;
+			gap: 13.9rem;
+			flex-direction: row;
+			align-items: flex-end;
+			padding-right: 9.5rem;
+			padding-left: 11rem;
+			background-size: 70%;
+			background-position: -10% 70%;
+		}
+
+		&-desktop {
+			display: none;
+			@include breakpoint(medium) {
+				display: block;
+				margin-bottom: -2rem;
+			}
+		}
+		&-tablet {
+			display: block;
+			@include breakpoint(medium) {
+				display: none;
+			}
 		}
 
 		&-header {
-			width: 26.1rem;
 			color: var(--white);
+			margin: auto;
+			width: 26.1rem;
+			padding-top: 3.2rem;
+			@include breakpoint(medium) {
+				padding-top: 0;
+				margin: none;
+			}
 		}
 
 		&-text {
 			color: var(--white);
 			padding-top: 2.4rem;
-			padding-bottom: 4rem;
+			padding-bottom: 2.4rem;
+			@include breakpoint(medium) {
+				padding-bottom: 4rem;
+			}
 		}
 
 		&-content {
-			width: 34.9rem;
-			padding-bottom: 12.4rem;
+			@include breakpoint(medium) {
+				width: 34.9rem;
+				padding-bottom: 12.4rem;
+			}
 		}
 	}
 
@@ -97,22 +152,33 @@
 	&__speakers {
 		margin-top: 4.8rem;
 		margin-bottom: 4.8rem;
-		height: 32rem;
 		background-image: url('../../public/assets/home/desktop/image-speaker-zx7.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: contain;
+		border-radius: var(--border-radius-08);
 		padding: 10rem 9.5rem;
-		border-radius: 8px;
+		min-height: 32rem;
+		height: 32rem;
+		@include breakpoint(small) {
+			padding-left: 2.4rem;
+			padding-top: 10rem;
+			background-size: cover;
+			background-image: url('../../public/assets/home/mobile/image-speaker-zx7.jpg');
+		}
 	}
 
 	// Earphones
 	&__earphones {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
 		grid-gap: 3rem;
 		width: 100%;
 		height: 32rem;
+
+		@include breakpoint(medium) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 
 		&-bg {
 			background-image: url('../../public/assets/home/desktop/image-earphones-yx1.jpg');
@@ -121,12 +187,23 @@
 			background-size: cover;
 			width: 100%;
 			border-radius: var(--border-radius-08);
+			@include breakpoint(small) {
+				height: 20rem;
+				background-size: 100%;
+			}
+			@include breakpoint(medium) {
+				height: 100%;
+				background-size: cover;
+			}
 		}
 
 		&-content {
 			background: #f1f1f1;
 			padding: 10rem 9.5rem;
 			border-radius: var(--border-radius-08);
+			@include breakpoint(small) {
+				padding: 4.1rem 2.4rem;
+			}
 		}
 	}
 }
@@ -137,10 +214,27 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 12.5rem;
+	padding-bottom: 9.6rem;
+	@include breakpoint(small) {
+		padding-top: 12rem;
+		padding-bottom: 12rem;
+		flex-direction: column-reverse;
+		gap: 4rem;
+	}
+	@include breakpoint(large) {
+		flex-direction: row;
+		gap: 12.5rem;
+	}
 	padding-bottom: 20rem;
 	&__content {
-		width: 44.5rem;
+		@include breakpoint(small) {
+			width: 100%;
+			text-align: center;
+		}
+		@include breakpoint(large) {
+			width: 44.5rem;
+			text-align: left;
+		}
 	}
 
 	&--span {
@@ -150,5 +244,31 @@
 	&--text {
 		font-weight: var(--font-semi-bold);
 		opacity: 0.5;
+		padding-top: 3.2rem;
+	}
+
+	// Images
+	&__image-desktop {
+		display: none;
+		@include breakpoint(large) {
+			display: block;
+		}
+	}
+	&__image-tablet {
+		display: none;
+		@include breakpoint(medium) {
+			display: block;
+		}
+		@include breakpoint(large) {
+			display: none;
+		}
+	}
+	&__image-mobile {
+		@include breakpoint(small) {
+			display: block;
+		}
+		@include breakpoint(medium) {
+			display: none;
+		}
 	}
 }

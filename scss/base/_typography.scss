@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 h1,
 h2,
 h3,
@@ -10,10 +12,15 @@ h6 {
 }
 
 h1 {
-	font-size: 5.6rem;
-	line-height: 5.8rem;
-	letter-spacing: 2px;
+	font-size: 3.6rem;
+	line-height: 4rem;
+	letter-spacing: 1.28571px;
 	color: var(--white);
+	@include breakpoint(medium) {
+		font-size: 5.6rem;
+		line-height: 5.8rem;
+		letter-spacing: 2px;
+	}
 }
 
 h2 {
@@ -63,4 +70,3 @@ h6 {
 	text-transform: uppercase;
 	color: var(--orange);
 }
-
