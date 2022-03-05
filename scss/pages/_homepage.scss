@@ -10,6 +10,7 @@
 	background-size: cover;
 	z-index: 999;
 	margin-top: -11.5rem;
+	overflow: hidden;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -45,5 +46,109 @@
 		width: 34.9rem;
 		padding-top: 2.4rem;
 		padding-bottom: 4rem;
+	}
+}
+
+// Select product
+.select {
+	@include container;
+	padding-bottom: 20rem;
+	&__speaker {
+		background: var(--orange);
+		background-image: url('../../public/assets/home/desktop/pattern-circles.svg');
+		background-position: -10% 70%;
+		background-repeat: no-repeat;
+		background-size: 70%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		height: 56rem;
+		gap: 13.9rem;
+		border-radius: var(--border-radius-08);
+		overflow: hidden;
+		padding-left: 11rem;
+		padding-right: 9.5rem;
+		&-image {
+			margin-bottom: -2rem;
+		}
+
+		&-header {
+			width: 26.1rem;
+			color: var(--white);
+		}
+
+		&-text {
+			color: var(--white);
+			padding-top: 2.4rem;
+			padding-bottom: 4rem;
+		}
+
+		&-content {
+			width: 34.9rem;
+			padding-bottom: 12.4rem;
+		}
+	}
+
+	&__button {
+		padding-top: 3.2rem;
+	}
+
+	// Speakers
+	&__speakers {
+		margin-top: 4.8rem;
+		margin-bottom: 4.8rem;
+		height: 32rem;
+		background-image: url('../../public/assets/home/desktop/image-speaker-zx7.jpg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		padding: 10rem 9.5rem;
+		border-radius: 8px;
+	}
+
+	// Earphones
+	&__earphones {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 3rem;
+		width: 100%;
+		height: 32rem;
+
+		&-bg {
+			background-image: url('../../public/assets/home/desktop/image-earphones-yx1.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			border-radius: var(--border-radius-08);
+		}
+
+		&-content {
+			background: #f1f1f1;
+			padding: 10rem 9.5rem;
+			border-radius: var(--border-radius-08);
+		}
+	}
+}
+
+// Gear
+.gear {
+	@include container;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12.5rem;
+	padding-bottom: 20rem;
+	&__content {
+		width: 44.5rem;
+	}
+
+	&--span {
+		color: var(--orange);
+	}
+
+	&--text {
+		font-weight: var(--font-semi-bold);
+		opacity: 0.5;
 	}
 }

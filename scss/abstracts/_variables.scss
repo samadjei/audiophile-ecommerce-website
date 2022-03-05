@@ -1,5 +1,5 @@
 :root {
-	// Colours 
+	// Colours
 	--orange: #d87d4a;
 	--light-black: #101010;
 	--grey: #f1f1f1;
@@ -7,14 +7,17 @@
 	--white: #ffffff;
 	--black: #000000;
 	--light-orange: #fbaf85;
+	--gravel: #4c4c4c;
 
-	// Typography 
+	// Typography
 	--font-normal: 400;
 	--font-semi-bold: 500;
 	--font-bold: 700;
 
-	// Transition 
+	// Transition
 	--transition-03: all 0.3s ease-in;
 	--transition-04: all 0.4s ease-in;
-}
 
+	// Border Radius
+	--border-radius-08: 0.8rem;
+}

@@ -13,6 +13,7 @@
 		margin: 0 auto;
 		height: 11.3rem;
 	}
+	overflow: hidden;
 	@include breakpoint(xsmall) {
 		height: 9rem;
 	}
@@ -170,6 +171,7 @@
 	}
 }
 
+// !add background overlay
 .bg-cover {
 	background: var(--black);
 	mix-blend-mode: normal;
