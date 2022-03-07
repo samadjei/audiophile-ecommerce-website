@@ -30,7 +30,7 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="/Heaphones">
+						<Link href="/Headphones">
 							<a className="navbar__links--items">Headphones</a>
 						</Link>
 					</li>

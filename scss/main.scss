@@ -6,12 +6,14 @@
 @use 'base/typography' as *;
 
 @use 'component/buttons' as *;
+@use 'component/headers' as *;
 
 @use 'layout/footer' as *;
 @use 'layout/hero' as *;
 @use 'layout/navbar' as *;
 
 @use 'pages/homepage' as *;
+@use 'pages/headphones' as *;
 
 // @import 'component/button.scss';
 // Google Font import

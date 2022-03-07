@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.headers {
+	background: var(--black);
+	padding: 9.8rem 0;
+
+	&--title {
+		color: var(--white);
+		text-align: center;
+	}
+}
