@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.headphones {
+	&__grid {
+		padding-top: 16rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 12.5rem;
+	}
+
+	&__content {
+		max-width: 44.5rem;
+	}
+}
+
+.page {
+	&--title {
+		padding-top: 1.6rem;
+	}
+	&--text {
+		padding-top: 3.2rem;
+		padding-bottom: 4rem;
+		opacity: 0.5;
+	}
+}
