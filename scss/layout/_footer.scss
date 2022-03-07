@@ -1,0 +1,126 @@
+@use '../abstracts' as *;
+
+.footer {
+	background: var(--black);
+
+	&__top {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		@include breakpoint(small) {
+			flex-direction: column;
+			margin: auto;
+			gap: 4.8rem;
+		}
+		@include breakpoint(medium) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 3.2rem;
+		}
+		@include breakpoint(large) {
+			justify-content: space-between;
+			width: 100%;
+			flex-direction: row;
+		}
+	}
+
+	&__inner {
+		@include container;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 7.5rem;
+		padding-bottom: 4.8rem;
+		@include breakpoint(small) {
+			align-items: center;
+			text-align: center;
+		}
+		@include breakpoint(medium) {
+			align-items: stretch;
+			text-align: left;
+		}
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 10.5rem;
+	}
+
+	&--text {
+		padding-top: 3.6rem;
+		padding-bottom: 5.6rem;
+		width: 100%;
+		@include breakpoint(large) {
+			max-width: 54rem;
+		}
+	}
+
+	&--text,
+	&--copyright {
+		color: var(--white);
+		opacity: 0.5;
+	}
+
+	&--copyright {
+		width: 100%;
+		@include breakpoint(small) {
+			margin: 0 auto;
+			padding-bottom: 4.8rem;
+		}
+		@include breakpoint(medium) {
+			margin: none;
+			padding-bottom: 0rem;
+		}
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		gap: 3.4rem;
+		@include breakpoint(small) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		@include breakpoint(medium) {
+			flex-direction: row;
+		}
+	}
+	&--items {
+		color: var(--white);
+		transition: var(--transition-03);
+		&:hover,
+		&:focus {
+			color: var(--orange);
+		}
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+
+		@include breakpoint(large) {
+			margin-top: -7rem;
+		}
+		&--items {
+			color: var(--white);
+			font-size: 3rem;
+			transition: var(--transition-03);
+			cursor: pointer;
+			&:hover,
+			&:focus {
+				color: var(--orange);
+			}
+		}
+	}
+}

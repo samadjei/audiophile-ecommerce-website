@@ -156,8 +156,9 @@
 		position: relative;
 		transition: var(--transition-03);
 
-		&::hover {
-			color: red;
+		&:hover,
+		&:focus {
+			color: var(--orange);
 		}
 
 		&::after {

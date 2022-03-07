@@ -30,13 +30,18 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="/About">
+						<Link href="/Heaphones">
 							<a className="navbar__links--items">Headphones</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/Subscribe">
+						<Link href="/Speakers">
 							<a className="navbar__links--items">Speakers</a>
+						</Link>
+					</li>
+					<li>
+						<Link href="/Earphones">
+							<a className="navbar__links--items">Earphones</a>
 						</Link>
 					</li>
 				</ul>
