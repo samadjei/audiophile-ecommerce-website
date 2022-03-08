@@ -13,11 +13,11 @@
 @use 'layout/navbar' as *;
 
 @use 'pages/homepage' as *;
-@use 'pages/headphones' as *;
+@use 'pages/products' as *;
+@use 'pages/pages' as *;
 
-// @import 'component/button.scss';
 // Google Font import
-@import url('https://f onts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
 
 *,
 *::after,
