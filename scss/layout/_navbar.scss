@@ -17,11 +17,9 @@
 
 	&__logo {
 		cursor: pointer;
-		// @include breakpoint(medium) {
 		display: flex;
 		align-items: center;
 		gap: 4.2rem;
-		// }
 		@include breakpoint(small) {
 			gap: 7.6rem;
 		}

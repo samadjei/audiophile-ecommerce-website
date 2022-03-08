@@ -1,20 +1,44 @@
 @use '../abstracts' as *;
 
 .headphones {
-	&__grid {
-		padding-top: 16rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 12.5rem;
-	}
-
 	&__content {
 		max-width: 44.5rem;
+	}
+
+	&__gear {
+		padding-top: 16rem;
 	}
 }
 
 .page {
+	&__grid {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 12.5rem;
+
+		@include breakpoint(small) {
+			flex-direction: column;
+			text-align: center;
+			padding-top: 6.4rem;
+			&:nth-child(2) {
+				flex-direction: column;
+			}
+		}
+
+		@include breakpoint(medium) {
+			padding-top: 12rem;
+		}
+		@include breakpoint(large) {
+			padding-top: 16rem;
+
+			flex-direction: row;
+			text-align: left;
+			&:nth-child(2) {
+				flex-direction: row-reverse;
+			}
+		}
+	}
 	&--title {
 		padding-top: 1.6rem;
 	}
@@ -22,5 +46,36 @@
 		padding-top: 3.2rem;
 		padding-bottom: 4rem;
 		opacity: 0.5;
+	}
+
+	&__image-desktop {
+		@include breakpoint(small) {
+			display: none;
+		}
+		@include breakpoint(large) {
+			display: block;
+		}
+	}
+	&__image-tablet {
+		@include breakpoint(small) {
+			display: none;
+		}
+		@include breakpoint(medium) {
+			display: block;
+		}
+		@include breakpoint(large) {
+			display: none;
+		}
+	}
+	&__image-mobile {
+		@include breakpoint(small) {
+			display: block;
+		}
+		@include breakpoint(medium) {
+			display: none;
+		}
+		@include breakpoint(large) {
+			display: none;
+		}
 	}
 }
