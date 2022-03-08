@@ -49,7 +49,7 @@ const Headphones = () => {
 						<div className="page__image-mobile">
 							<Image src={card.mobileImage} alt={card.alt} width={327} height={352} />
 						</div>
-						<div className="headphones__content">
+						<div className="page__content">
 							<span className="overline">{card.overline}</span>
 							<h2 className="page--title">{card.title}</h2>
 							<p className="page--text">{card.content}</p>
@@ -63,7 +63,7 @@ const Headphones = () => {
 				))}
 
 				<Categories />
-				<div className="headphones__gear">
+				<div className="page__gear">
 					<AudioGear />
 				</div>
 			</div>
