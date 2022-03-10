@@ -1,0 +1,68 @@
+@use '../abstracts' as *;
+
+.details {
+	padding-top: 7.9rem;
+	padding-bottom: 5.6rem;
+	&--back {
+		font-weight: var(--font-semi-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		color: var(--black);
+		opacity: 0.5;
+		padding-bottom: 5.6rem;
+	}
+
+	&__flex {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 12.4rem;
+		@include breakpoint(large) {
+			padding-bottom: 16rem;
+		}
+	}
+	&__content {
+		@include breakpoint(medium) {
+			width: 44.5rem;
+		}
+	}
+
+	&--description {
+		padding: 3.2rem 0;
+		opacity: 0.5;
+	}
+
+	&--price {
+		font-weight: var(--font-bold);
+	}
+
+	&__cart {
+		display: flex;
+		padding-top: 4.7rem;
+		gap: 1.6rem;
+		align-items: center;
+	}
+
+	&__increment,
+	&__decrement,
+	&__number {
+		background: #f1f1f1;
+		padding: 1.55rem;
+	}
+}
+
+.info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12.5rem;
+	@include breakpoint(large) {
+		padding-bottom: 16rem;
+	}
+
+	&__content {
+		@include breakpoint(medium) {
+			width: 53.5rem;
+		}
+	}
+}

@@ -14,6 +14,7 @@ const data = [
 		tabletImage: '/assets/product-yx1-earphones/tablet/image-category-page-preview.jpg',
 		mobileImage: '/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg',
 		alt: 'YX1 wireless earphones',
+		route: 'yx1-earphones',
 	},
 ];
 
@@ -38,7 +39,7 @@ const Earphones = () => {
 							<h2 className="page--title">{card.title}</h2>
 							<p className="page--text">{card.content}</p>
 							<div>
-								<Link href="/Headphones">
+								<Link href={'/Product/' + card.route}>
 									<Button children="See Product" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
 								</Link>
 							</div>

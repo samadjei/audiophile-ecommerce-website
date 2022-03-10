@@ -1,9 +1,9 @@
-import PageHeaders from '../../components/PageHeaders';
+import PageHeaders from '../components/PageHeaders';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../../components/Button';
-import Categories from '../../components/Categories';
-import AudioGear from '../../components/Home/AudioGear';
+import Button from '../components/Button';
+import Categories from '../components/Categories';
+import AudioGear from '../components/Home/AudioGear';
 
 const data = [
 	{
@@ -14,7 +14,7 @@ const data = [
 		tabletImage: '/assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg',
 		mobileImage: '/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg',
 		alt: 'Headphones',
-		route: 'XX99-Mark-II-Headphones',
+		slug: 'xx99-mark-two-headphones',
 	},
 	{
 		title: 'XX99 Mark I Headphones',
@@ -23,7 +23,7 @@ const data = [
 		tabletImage: '/assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg',
 		mobileImage: '/assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg',
 		alt: 'Headphones',
-		route: 'XX99-Mark-I-Headphones',
+		route: 'xx99-mark-one-headphones',
 	},
 	{
 		title: 'XX59 Headphones',
@@ -32,7 +32,7 @@ const data = [
 		tabletImage: '/assets/product-xx59-headphones/tablet/image-category-page-preview.jpg',
 		mobileImage: '/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg',
 		alt: 'Headphones',
-		route: 'XX59-Headphones',
+		route: 'xx59-headphones',
 	},
 ];
 
@@ -57,7 +57,7 @@ const Headphones = () => {
 							<h2 className="page--title">{card.title}</h2>
 							<p className="page--text">{card.content}</p>
 							<div>
-								<Link href={'/Headphones/' + card.route}>
+								<Link href={'/Product/' + card.route}>
 									<Button children="See Product" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
 								</Link>
 							</div>
