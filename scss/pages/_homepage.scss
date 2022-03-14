@@ -250,6 +250,9 @@
 	}
 
 	// Images
+	&__img {
+		border-radius: var(--border-radius-08);
+	}
 	&__image-desktop {
 		display: none;
 		@include breakpoint(large) {
