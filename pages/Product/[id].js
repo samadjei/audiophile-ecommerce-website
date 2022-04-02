@@ -24,7 +24,10 @@ export const getStaticPaths = async () => {
 };
 
 const ProductDetail = ({ items }) => {
+	// State
 	const [count, setCount] = useState(1);
+	const [cartItems, setCartItems] = useState([]);
+
 	function decrementCount() {
 		setCount((prevCount) => prevCount - 1);
 		if (count === 0) {
