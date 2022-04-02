@@ -15,6 +15,7 @@ const data = [
 		mobileImage: '/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg',
 		alt: 'Headphones',
 		slug: 'xx99-mark-two-headphones',
+		route: 'xx99-mark-two-headphones',
 	},
 	{
 		title: 'XX99 Mark I Headphones',

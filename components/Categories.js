@@ -19,7 +19,7 @@ const Categories = () => {
 						<Image src="/assets/shared/desktop/image-category-thumbnail-speakers.png" alt="Speakers" width={103} height={104} />
 					</div>
 					<h3 className="menu--title">Speakers</h3>
-					<Link href="/Headphones">
+					<Link href="/Speakers">
 						<a className="menu--shop">Shop</a>
 					</Link>
 				</div>
@@ -28,7 +28,7 @@ const Categories = () => {
 						<Image src="/assets/shared/desktop/image-category-thumbnail-earphones.png" alt="Earphones" width={103} height={104} />
 					</div>
 					<h3 className="menu--title">Earphones </h3>
-					<Link href="/Headphones">
+					<Link href="/Earphones">
 						<a className="menu--shop">Shop</a>
 					</Link>
 				</div>

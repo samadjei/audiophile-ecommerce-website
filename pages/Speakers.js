@@ -14,6 +14,7 @@ const data = [
 		tabletImage: '/assets/product-zx9-speaker/tablet/image-category-page-preview.jpg',
 		mobileImage: '/assets/product-zx9-speaker/mobile/image-category-page-preview.jpg',
 		alt: 'ZX9 speaker',
+		route: 'zx9-speaker',
 	},
 	{
 		title: 'ZX7 speaker',
@@ -22,6 +23,7 @@ const data = [
 		tabletImage: '/assets/product-zx7-speaker/tablet/image-category-page-preview.jpg',
 		mobileImage: '/assets/product-zx7-speaker/mobile/image-category-page-preview.jpg',
 		alt: 'ZX7 speaker',
+		route: 'zx7-speaker',
 	},
 ];
 
@@ -46,7 +48,7 @@ const Speakers = () => {
 							<h2 className="page--title">{card.title}</h2>
 							<p className="page--text">{card.content}</p>
 							<div>
-								<Link href="/Headphones">
+								<Link href={'/Product/' + card.route}>
 									<Button children="See Product" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
 								</Link>
 							</div>
