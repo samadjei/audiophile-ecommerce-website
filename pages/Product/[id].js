@@ -6,6 +6,8 @@ import Others from '../../components/Others';
 import Categories from '../../components/Categories';
 import AudioGear from '../../components/Home/AudioGear';
 import { useState } from 'react';
+import Cart from '../../components/Cart';
+import Product from './Product';
 
 export const getStaticProps = async ({ params }) => {
 	const products = product.filter((p) => p.slug === params.id);
@@ -24,19 +26,7 @@ export const getStaticPaths = async () => {
 };
 
 const ProductDetail = ({ items }) => {
-	// State
-	const [count, setCount] = useState(1);
-	const [cartItems, setCartItems] = useState([]);
 
-	function decrementCount() {
-		setCount((prevCount) => prevCount - 1);
-		if (count === 0) {
-			console.log(count);
-		}
-	}
-	function incrementCount() {
-		setCount((prevCount) => prevCount + 1);
-	}
 	return (
 		<div className="container">
 			<div className="details">
@@ -45,28 +35,7 @@ const ProductDetail = ({ items }) => {
 				</Link>
 			</div>
 			<div className="details__flex">
-				<div>
-					<Image src={items.image.mobile} alt={items.name} width={540} height={560} />
-				</div>
-				<div className="details__content">
-					<h2>{items.name}</h2>
-					<p className="details--description">{items.description}</p>
-					<h6 className="details--price">${items.price}</h6>
-					<div className="details__cart">
-						<div className="details__add">
-							<span className="details__decrement" onClick={decrementCount}>
-								-
-							</span>
-							<span className="details__number">{count}</span>
-							<span className="details__increment" onClick={incrementCount}>
-								+
-							</span>
-						</div>
-						<div>
-							<Button children="Add to cart" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
-						</div>
-					</div>
-				</div>
+				<Product image={items.image.mobile} name={items.name} desc={items.description} price={items.price}  />
 			</div>
 			<div className="info">
 				<div className="info__content">
@@ -103,6 +72,7 @@ const ProductDetail = ({ items }) => {
 			<div className="page__gear">
 				<AudioGear />
 			</div>
+			<Cart />
 		</div>
 	);
 };
