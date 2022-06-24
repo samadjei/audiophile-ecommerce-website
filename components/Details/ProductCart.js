@@ -1,4 +1,6 @@
 import { products } from '../../components/Data';
+import Image from 'next/image';
+import Button from "../Button"
 
 const ProductCart = () => {
 	return (
@@ -21,7 +23,7 @@ const ProductCart = () => {
 						</span>
 					</div>
 					<div>
-						<Button onClick={() => addItem(items)} children="Add to cart" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
+						<Button onClick={() => addItem(items)}  className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop">Add to cart</Button>
 					</div>
 				</div>
 			</div>

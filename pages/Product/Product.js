@@ -26,7 +26,7 @@ const Product = (props, product) => {
 						</span>
 					</div>
 					<div>
-						<Button onClick={() => onAdd(product, qty)} children="Add to cart" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
+						<Button onClick={() => onAdd(product, qty)} className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop">Add to cart</Button>
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 const STYLES = ['btn--primary', 'btn--secondary', 'btn--tertiary'];
 
@@ -13,5 +13,8 @@ const Button = React.forwardRef(({ onClick, href, buttonStyle, buttonSize, type,
 		</button>
 	);
 });
+
+Button.displayName = 'Button';
+
 
 export default Button;

@@ -49,7 +49,7 @@ const Speakers = () => {
 							<p className="page--text">{card.content}</p>
 							<div>
 								<Link href={'/Product/' + card.route}>
-									<Button children="See Product" className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop" />
+								<Button  className="btn" buttonStyle="btn--secondary" buttonSize="btn--desktop">See Product</Button>
 								</Link>
 							</div>
 						</div>

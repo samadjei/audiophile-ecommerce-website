@@ -18,7 +18,7 @@ const SelectProduct = () => {
 					<p className="select__speaker-text">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
 					<div className="select__button">
 						<Link href="/Product/zx9-speaker">
-							<Button children="See Product" className="btn" buttonStyle="btn--tertiary" buttonSize="btn--desktop" />
+							<Button className="btn" buttonStyle="btn--tertiary" buttonSize="btn--desktop">See Product</Button>
 						</Link>
 					</div>
 				</div>
@@ -27,7 +27,7 @@ const SelectProduct = () => {
 				<h3>ZX7 speaker</h3>
 				<div className="select__button">
 					<Link href="/Product/zx7-speaker">
-						<Button children="See Product" className="btn" buttonStyle="btn--secondary" buttonSize="btn--desktop" />
+						<Button  className="btn" buttonStyle="btn--secondary" buttonSize="btn--desktop">See Product</Button>
 					</Link>
 				</div>
 			</div>
@@ -37,7 +37,7 @@ const SelectProduct = () => {
 					<h3>YX1 earphones</h3>
 					<div className="select__button">
 						<Link href="/Product/yx1-earphones">
-							<Button children="See Product" className="btn" buttonStyle="btn--secondary" buttonSize="btn--desktop" />
+						<Button  className="btn" buttonStyle="btn--secondary" buttonSize="btn--desktop">See Product</Button>
 						</Link>
 					</div>
 				</div>
