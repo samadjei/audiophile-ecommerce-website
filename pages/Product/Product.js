@@ -13,7 +13,7 @@ const Product = (props, product) => {
 			</div>
 			<div className="details__content">
 				<h2>{props.name}</h2>
-				<p className="details--description">{props.description}</p>
+				<p className="details--description">{props.desc}</p>
 				<h6 className="details--price">${props.price}</h6>
 				<div className="details__cart">
 					<div className="details__add">

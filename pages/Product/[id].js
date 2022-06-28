@@ -26,7 +26,7 @@ export const getStaticPaths = async () => {
 };
 
 const ProductDetail = ({ items }) => {
-
+	console.log(items.others[0].image.desktop)
 	return (
 		<div className="container">
 			<div className="details">
@@ -67,7 +67,7 @@ const ProductDetail = ({ items }) => {
 					<Image src={items.gallery.third.desktop} alt="Photo" width={635} height={720} />
 				</div>
 			</div>
-			<Others />
+			<Others others={items} />
 			<Categories />
 			<div className="page__gear">
 				<AudioGear />
