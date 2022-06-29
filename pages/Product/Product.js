@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../../components/Button';
@@ -31,5 +31,7 @@ const Product = (props) => {
 		</>
 	);
 };
+
+Product.displayName = 'Product';
 
 export default Product;

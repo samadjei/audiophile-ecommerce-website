@@ -52,7 +52,7 @@ const Navbar = () => {
 				</ul>
 				<div className="navbar__cart">
 					<Image src="/assets/shared/desktop/icon-cart.svg" alt="Cart Icon" width={23} height={20} />
-					<span>{item}Hey</span>
+					<span>1</span>
 				</div>
 			</div>
 			<hr className="hr-line" />

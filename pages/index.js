@@ -1,9 +1,11 @@
 import Homepage from './Homepage';
 
-export default function Home() {
+const Home = () => {
 	return (
-		<>
+		<div>
 			<Homepage />
-		</>
-	);
+		</div>
+	)
 }
+
+export default Home
