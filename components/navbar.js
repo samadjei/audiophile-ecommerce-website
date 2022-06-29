@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Categories from './Categories';
+// import { CartContext } from '../context/CartContext';
+// import { useContext } from 'react';
 
 const Navbar = () => {
 	// Menu State
@@ -9,6 +11,9 @@ const Navbar = () => {
 	const menuToggle = () => {
 		setIsOpen(!isOpen);
 	};
+
+	// const { item } = useContext(CartContext);
+	// console.log(item)
 
 	return (
 		<nav className={isOpen ? 'navbar' : 'navbar'}>
@@ -46,7 +51,8 @@ const Navbar = () => {
 					</li>
 				</ul>
 				<div className="navbar__cart">
-					<Image src="/assets/shared/desktop/icon-cart.svg" alt="Coffee Roaster Logo" width={23} height={20} />
+					<Image src="/assets/shared/desktop/icon-cart.svg" alt="Cart Icon" width={23} height={20} />
+					<span>{item}Hey</span>
 				</div>
 			</div>
 			<hr className="hr-line" />

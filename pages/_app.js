@@ -1,18 +1,16 @@
 import '../scss/main.scss';
 import Layout from '../components/layout';
-import { StateContext } from '../context/StateContext';
-import { Toaster } from 'react-hot-toast';
+// import { CartProvider } from '../context/CartContext';
 
 function MyApp({ Component, pageProps }) {
 	return (
 		// Wrapping the StateContext around the component makes it avaialable to every component
-		<StateContext>
+		//<CartProvider>
 			<Layout>
-				<Toaster />
 				{/* children of the layout component */}
 				<Component {...pageProps} />
 			</Layout>
-		</StateContext>
+		//</CartProvider>
 	);
 }
 
