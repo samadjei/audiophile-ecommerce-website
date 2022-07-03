@@ -26,7 +26,6 @@ export const getStaticPaths = async () => {
 };
 
 const ProductDetail = ({ items }) => {
-	console.log(items.others[0].image.desktop)
 	return (
 		<div className="container">
 			<div className="details">

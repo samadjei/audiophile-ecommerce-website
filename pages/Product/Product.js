@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../../components/Button';
+import { useStateContext } from '../../context/StateContext';
 
 const Product = (props) => {
+	console.log(props.name)
+	const { increaseQty, decreaseQty, quantity, onAdd } = useStateContext();
 	return (
 		<>
 			<div>
@@ -15,16 +18,14 @@ const Product = (props) => {
 				<h6 className="details--price">${props.price}</h6>
 				<div className="details__cart">
 					<div className="details__add">
-						<span className="details__decrement">
-							-
-						</span>
-						<span className="details__number">Insert</span>
-						<span className="details__increment">
-							+
-						</span>
+						<span onClick={decreaseQty} className="details__decrement">-</span>
+						<span className="details__number">{quantity}</span>
+						<span onClick={increaseQty} className="details__increment">+</span>
 					</div>
 					<div>
-						<Button className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop">Add to cart</Button>
+						<Button onClick={()=> onAdd(product, quantity)} className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop">
+							Add to cart
+						</Button>
 					</div>
 				</div>
 			</div>

@@ -26,5 +26,5 @@ export default ({ productLists }) => (
 	</>
 );
 
-Button.displayName = 'Button';
+productLists.displayName = 'productLists';
 
