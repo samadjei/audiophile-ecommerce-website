@@ -27,8 +27,7 @@ export const getStaticPaths = async () => {
 };
 
 const ProductDetail = ({ items }) => {
-	console.log(items)
-	const { increaseQty, decreaseQty, quantity, onAdd } = useStateContext();
+	const { quantity, onAdd } = useStateContext();
 
 	const addToCart = () => {
 		onAdd(items, quantity)

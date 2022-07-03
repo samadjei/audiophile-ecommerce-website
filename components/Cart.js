@@ -1,22 +1,22 @@
-// import Image from 'next/image';
-// import Button from '../components/Button';
+import React, { useRef } from 'react';
+import Link from 'next/link';
+import Button from './Button';
+import roast from 'react-hot-toast';
+import { useStateContext } from '../context/StateContext';
 
-const Cart = (props) => {
+const Cart = () => {
+	const cartRef = useRef();
+	const { totalPrice, totalQuantities, cartItems, setShowCart } = useStateContext();
 	return (
-		<div className="cart">
-			{/* <div>{cartItems.length === 0 && <div>Cart is Empty</div>}</div> */}
-			{/* <div className="cart__card">
-				<div className="cart__card-top">
-					<h3>Cart</h3>
-					<span>(3)</span>
-					<p>Remove all</p>
-				</div>
-				<div className="cart__main">
-					<div className="cart__items">
-						<Image src={items.image.mobile} alt={items.name} width={540} height={560} />
-					</div>
-				</div>
-			</div> */}
+		<div ref={cartRef}>
+			<div className="cart__overlay"></div>
+			{/* <Button onClick={()=> setShowCart(false)} className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop">
+				Add to cart
+			</Button> */}
+			<div className="cart__header">
+				<h3>Cart(3)</h3>
+				<span>Remove all</span>
+			</div>
 		</div>
 	);
 };

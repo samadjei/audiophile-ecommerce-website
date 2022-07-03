@@ -5,9 +5,8 @@ import Button from '../../components/Button';
 import { useStateContext } from '../../context/StateContext';
 
 const Product = ({image, name, desc, price, cart}) => {
-	const { increaseQty, decreaseQty, quantity, onAdd } = useStateContext();
+	const { increaseQty, decreaseQty, quantity } = useStateContext();
 
-	// const {image, name, desc, price} = product
 
 	return (
 		<>

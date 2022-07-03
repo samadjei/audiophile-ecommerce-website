@@ -2,8 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Categories from './Categories';
-// import { CartContext } from '../context/CartContext';
-// import { useContext } from 'react';
+import Cart from './Cart';
 
 const Navbar = () => {
 	// Menu State
@@ -12,8 +11,11 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
-	// const { item } = useContext(CartContext);
-	// console.log(item)
+	// Cart State
+	const [cartOpen, setCartOpen] = useState(false);
+	const openCart = () => {
+		setCartOpen(true);
+	};
 
 	return (
 		<nav className={isOpen ? 'navbar' : 'navbar'}>
@@ -51,12 +53,13 @@ const Navbar = () => {
 					</li>
 				</ul>
 				<div className="navbar__cart">
-					<Image src="/assets/shared/desktop/icon-cart.svg" alt="Cart Icon" width={23} height={20} />
+					<Image onClick={() => openCart()} src="/assets/shared/desktop/icon-cart.svg" alt="Cart Icon" width={23} height={20} />
 					<span>1</span>
 				</div>
 			</div>
 			<hr className="hr-line" />
 			{isOpen ? <Categories className="inactive" /> : ''}
+			<Cart openCart={cartOpen} onClose={() => setCartOpen(false)} />
 		</nav>
 	);
 };
