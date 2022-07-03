@@ -33,7 +33,7 @@ export const StateContext = ({ children }) => {
       // spread all the existing cart items  and spread the new object with the new products 
 			setCartItems([...cartItems, { ...product }]);
 		}
-		toast.success(`${qty} ${product.name} added to the cart`);
+		toast.success(`${quantity} ${product.name} added to the cart`);
 	};
 
 	const increaseQty = () => {

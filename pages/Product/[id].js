@@ -8,6 +8,7 @@ import AudioGear from '../../components/Home/AudioGear';
 import { useState } from 'react';
 import Cart from '../../components/Cart';
 import Product from './Product';
+import { useStateContext } from '../../context/StateContext';
 
 export const getStaticProps = async ({ params }) => {
 	const products = product.filter((p) => p.slug === params.id);
@@ -26,6 +27,12 @@ export const getStaticPaths = async () => {
 };
 
 const ProductDetail = ({ items }) => {
+	console.log(items)
+	const { increaseQty, decreaseQty, quantity, onAdd } = useStateContext();
+
+	const addToCart = () => {
+		onAdd(items, quantity)
+	}
 	return (
 		<div className="container">
 			<div className="details">
@@ -34,7 +41,7 @@ const ProductDetail = ({ items }) => {
 				</Link>
 			</div>
 			<div className="details__flex">
-				<Product image={items.image.mobile} name={items.name} desc={items.description} price={items.price}  />
+				<Product cart={addToCart} image={items.image.mobile} name={items.name} desc={items.description} price={items.price}  />
 			</div>
 			<div className="info">
 				<div className="info__content">
