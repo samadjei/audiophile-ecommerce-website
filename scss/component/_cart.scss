@@ -1,17 +1,31 @@
 @use '../abstracts' as *;
 
 .cart {
-	&__header {
+	&__header,
+	&__total {
 		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
-	// &__overlay {
-	// 	position: fixed;
-	// 	top: 0;
-	// 	left: 0;
-	// 	right: 0;
-	// 	bottom: 0;
-	// 	background-color: rgba(0, 0, 0, 0.7);
-	// 	z-index: 1000;
-	// }
+	&__card {
+		background: var(--white);
+		height: 48.8rem;
+		width: 37.7rem;
+		position: absolute;
+		right: 16.5rem;
+		border-radius: 0.8rem;
+		padding: 3.1rem;
+		z-index: 1000;
+	}
+
+	&__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 1000;
+	}
 }

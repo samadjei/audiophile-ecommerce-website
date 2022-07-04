@@ -1,12 +1,9 @@
 import { product } from '../../components/Data';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../../components/Button';
 import Others from '../../components/Others';
 import Categories from '../../components/Categories';
 import AudioGear from '../../components/Home/AudioGear';
-import { useState } from 'react';
-import Cart from '../../components/Cart';
 import Product from './Product';
 import { useStateContext } from '../../context/StateContext';
 
@@ -77,7 +74,6 @@ const ProductDetail = ({ items }) => {
 			<div className="page__gear">
 				<AudioGear />
 			</div>
-			<Cart />
 		</div>
 	);
 };

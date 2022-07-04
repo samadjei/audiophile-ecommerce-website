@@ -53,13 +53,12 @@ const Navbar = () => {
 					</li>
 				</ul>
 				<div className="navbar__cart">
-					<Image onClick={() => openCart()} src="/assets/shared/desktop/icon-cart.svg" alt="Cart Icon" width={23} height={20} />
-					<span>1</span>
+					<Image onClick={() => setCartOpen(true)} src="/assets/shared/desktop/icon-cart.svg" alt="Cart Icon" width={23} height={20} />
 				</div>
 			</div>
 			<hr className="hr-line" />
 			{isOpen ? <Categories className="inactive" /> : ''}
-			<Cart openCart={cartOpen} onClose={() => setCartOpen(false)} />
+			<Cart open={cartOpen} onClose={() => setCartOpen(false)} />
 		</nav>
 	);
 };
