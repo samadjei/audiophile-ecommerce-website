@@ -25,6 +25,17 @@
 		}
 	}
 
+	&__cart {
+		display: flex;
+		align-items: center;
+	}
+
+	&--quantity {
+		color: var(--orange);
+		padding: 0rem;
+		margin-left: 0.5rem;
+	}
+
 	&__inner {
 		display: flex;
 		justify-content: space-between;
