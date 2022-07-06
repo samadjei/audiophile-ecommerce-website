@@ -12,13 +12,13 @@ const Navbar = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const { showCart, setShowCart, totalQuantities } = useStateContext();
+	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity } = useStateContext();
 
 	// Cart State
 	const [cartOpen, setCartOpen] = useState(false);
-	const openCart = () => {
-		setCartOpen(true);
-	};
+	// const openCart = () => {
+	// 	setCartOpen(true);
+	// };
 
 	return (
 		<nav className={isOpen ? 'navbar' : 'navbar'}>

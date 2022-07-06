@@ -17,7 +17,7 @@ const ProductCart = () => {
 						<span className="details__decrement" onClick={decrementCount}>
 							-
 						</span>
-						<span className="details__number">{count}</span>
+						<span className="details__number">{qty}</span>
 						<span className="details__increment" onClick={incrementCount}>
 							+
 						</span>

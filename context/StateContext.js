@@ -5,7 +5,6 @@ import { product } from '../components/Data';
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
-	const [showCart, setShowCart] = useState(false);
 	const [cartItems, setCartItems] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [totalQuantities, setTotalQuantities] = useState(0);
@@ -45,11 +44,11 @@ export const StateContext = ({ children }) => {
 	// Quanity update function to add more quantities at any one time
 	const toggleCartItemQuantity = (id, value) => {
 		// go through all the cart items and find an individual cart item
-		foundProduct = cartItems.find((item) => item.id === product.id);
+		foundProduct = cartItems.find((item) => item.id === id);
 		// once we've found the item we'll find the index of the item
 		index = cartItems.findIndex((product) => product.id === id);
-		// update the cart item without mutating the state directly 
-		const newCartItems = cartItems.filter((item) => item.id !== id)
+		// update the cart item without mutating the state directly
+		const newCartItems = cartItems.filter((item) => item.id !== id);
 
 		// know whether we are incrementing or decrementing the quantities
 		if (value === 'inc') {
@@ -82,7 +81,6 @@ export const StateContext = ({ children }) => {
 	return (
 		<Context.Provider
 			value={{
-				showCart,
 				cartItems,
 				totalPrice,
 				totalQuantities,
@@ -91,6 +89,9 @@ export const StateContext = ({ children }) => {
 				decreaseQty,
 				onAdd,
 				toggleCartItemQuantity,
+				setCartItems,
+				setTotalPrice,
+				setTotalQuantities,
 			}}
 		>
 			{children}

@@ -7,8 +7,7 @@ import Image from 'next/image';
 
 const Cart = ({ open, onClose }) => {
 	const cartRef = useRef();
-	const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity } = useStateContext();
-
+	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity } = useStateContext();
 	// if the modal is not open, don't render out any content
 	if (!open) return null;
 	return (
@@ -47,7 +46,7 @@ const Cart = ({ open, onClose }) => {
 												<span onClick={() => toggleCartItemQuantity(item.id, 'dec')} className="cart__decrement">
 													-
 												</span>
-												<span className="cart__number">{item.qty}</span>
+												<span className="cart__number">{item.quantity}</span>
 												<span onClick={() => toggleCartItemQuantity(item.id, 'inc')} className="cart__increment">
 													+
 												</span>

@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 import { useStateContext } from '../../context/StateContext';
 
 const Product = ({image, name, desc, price, cart}) => {
-	const { increaseQty, decreaseQty, quantity } = useStateContext();
+	const { increaseQty, decreaseQty, qty } = useStateContext();
 
 
 	return (
@@ -20,7 +20,7 @@ const Product = ({image, name, desc, price, cart}) => {
 				<div className="details__cart">
 					<div className="details__add">
 						<span onClick={decreaseQty} className="details__decrement">-</span>
-						<span className="details__number">{quantity}</span>
+						<span className="details__number">{qty}</span>
 						<span onClick={increaseQty} className="details__increment">+</span>
 					</div>
 					<div>
