@@ -24,11 +24,11 @@ export const getStaticPaths = async () => {
 };
 
 const ProductDetail = ({ items }) => {
-	const { quantity, onAdd } = useStateContext();
+	const { qty, onAdd } = useStateContext();
 
 	const addToCart = () => {
-		onAdd(items, quantity)
-	}
+		onAdd(items, qty);
+	};
 	return (
 		<div className="container">
 			<div className="details">
@@ -37,7 +37,7 @@ const ProductDetail = ({ items }) => {
 				</Link>
 			</div>
 			<div className="details__flex">
-				<Product cart={addToCart} image={items.image.mobile} name={items.name} desc={items.description} price={items.price}  />
+				<Product cart={addToCart} image={items.image.mobile} name={items.name} desc={items.description} price={items.price} />
 			</div>
 			<div className="info">
 				<div className="info__content">

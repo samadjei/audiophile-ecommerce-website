@@ -74,6 +74,7 @@ export const StateContext = ({ children }) => {
 		setQty((prevQty) => {
 			// quantity value cannot be lower than 1
 			if (prevQty - 1 < 1) return 1;
+
 			return prevQty - 1;
 		});
 	};

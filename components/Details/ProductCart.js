@@ -1,8 +1,9 @@
-import { products } from '../../components/Data';
 import Image from 'next/image';
-import Button from "../Button"
+import Button from '../Button';
+import { useStateContext } from '../../context/StateContext';
 
 const ProductCart = () => {
+	const { decreaseQty, increaseQty, qty } = useStateContext();
 	return (
 		<div className="details__flex">
 			<div>
@@ -14,16 +15,18 @@ const ProductCart = () => {
 				<h6 className="details--price">${items.price}</h6>
 				<div className="details__cart">
 					<div className="details__add">
-						<span className="details__decrement" onClick={decrementCount}>
+						<span className="details__decrement" onClick={decreaseQty}>
 							-
 						</span>
 						<span className="details__number">{qty}</span>
-						<span className="details__increment" onClick={incrementCount}>
+						<span className="details__increment" onClick={increaseQty}>
 							+
 						</span>
 					</div>
 					<div>
-						<Button onClick={() => addItem(items)}  className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop">Add to cart</Button>
+						<Button onClick={() => addItem(items)} className="btn" buttonStyle="btn--primary" buttonSize="btn--desktop">
+							Add to cart
+						</Button>
 					</div>
 				</div>
 			</div>
