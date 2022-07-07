@@ -37,12 +37,12 @@ const ProductDetail = ({ items }) => {
 				</Link>
 			</div>
 			<div className="details__flex">
-				<Product cart={addToCart} image={items.image.mobile} name={items.name} desc={items.description} price={items.price} />
+				<Product cart={addToCart} newProduct={items.new} image={items.image.mobile} name={items.name} desc={items.description} price={items.price} />
 			</div>
 			<div className="info">
 				<div className="info__content">
 					<h2 className="info--title">Features</h2>
-					<p>{items.features}</p>
+					<p className='info--desc'>{items.features}</p>
 				</div>
 				<div>
 					<h2 className="info--title">In the box</h2>

@@ -12,14 +12,15 @@
 		padding-bottom: 5.6rem;
 	}
 
+	&__image {
+		border-radius: 0.8rem;
+	}
+
 	&__flex {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 12.4rem;
-		@include breakpoint(large) {
-			padding-bottom: 16rem;
-		}
 	}
 	&__content {
 		@include breakpoint(medium) {
@@ -27,9 +28,17 @@
 		}
 	}
 
+	&--name {
+		margin-top: 1.7rem;
+	}
+
 	&--description {
+		font-weight: var(--font-semi-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
 		padding: 3.2rem 0;
 		opacity: 0.5;
+		color: var(--black);
 	}
 
 	&--price {
@@ -86,15 +95,32 @@
 
 .info {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: flex-start;
 	gap: 12.5rem;
 	@include breakpoint(large) {
-		padding-bottom: 16rem;
+		margin-top: 16rem;
+		margin-bottom: 16rem;
+	}
+	@include breakpoint(medium) {
+		margin-top: 12rem;
+		margin-bottom: 12rem;
+	}
+	@include breakpoint(small) {
+		margin-top: 8.8rem;
+		margin-bottom: 8.8rem;
 	}
 
 	&--title {
 		padding-bottom: 3.2rem;
+	}
+
+	&--desc {
+		font-weight: var(--font-semi-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		color: var(--black);
+		opacity: 0.5;
 	}
 
 	&__content {
@@ -126,7 +152,6 @@
 		opacity: 0.5;
 	}
 }
-
 
 .others {
 	&--title {

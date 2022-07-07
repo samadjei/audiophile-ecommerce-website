@@ -34,14 +34,14 @@ const Cart = ({ open, onClose }) => {
 							cartItems.map((item) => (
 								<div className="cart__products" key={item.id}>
 									<div className="cart__product">
-										<div className="cart__image">
-											<Image src={item.image.mobile} alt="Headphones" width={64} height={64} />
+										<div className='cart__images'>
+											<Image className='cart__image' src={item.image.mobile} alt="Headphones" width={64} height={64} />
 										</div>
 										<div className="cart__product-details">
 											<span className="cart--name">{item.cartName}</span>
 											<span className="cart--price">${item.price}</span>
 										</div>
-										<div>
+										<div className='cart__toggle'>
 											<div className="cart__add">
 												<span onClick={() => toggleCartItemQuantity(item.id, 'dec')} className="cart__decrement">
 													-

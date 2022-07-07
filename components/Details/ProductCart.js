@@ -4,12 +4,14 @@ import { useStateContext } from '../../context/StateContext';
 
 const ProductCart = () => {
 	const { decreaseQty, increaseQty, qty } = useStateContext();
+	console.log(items)
 	return (
 		<div className="details__flex">
 			<div>
 				<Image src={items.image.mobile} alt={items.name} width={540} height={560} />
 			</div>
 			<div className="details__content">
+				{items.new === true ? 'New Product' : ''}
 				<h2>{items.name}</h2>
 				<p className="details--description">{items.description}</p>
 				<h6 className="details--price">${items.price}</h6>
