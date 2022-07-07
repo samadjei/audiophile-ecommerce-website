@@ -1,0 +1,2 @@
+- Remove functionality for cart items 
+- Checkout page

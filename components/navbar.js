@@ -57,7 +57,7 @@ const Navbar = () => {
 				</ul>
 				<div className="navbar__cart">
 					<Image onClick={() => setCartOpen(true)} src="/assets/shared/desktop/icon-cart.svg" alt="Cart Icon" width={23} height={20} />
-					<span className="navbar--quantity">{totalQuantities}</span>
+					{totalQuantities >= 1 ? <span className="navbar--quantity">{totalQuantities}</span> : ''}
 				</div>
 			</div>
 			<hr className="hr-line" />

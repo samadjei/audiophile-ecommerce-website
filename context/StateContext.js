@@ -10,6 +10,11 @@ export const StateContext = ({ children }) => {
 	const [totalQuantities, setTotalQuantities] = useState(0);
 	const [qty, setQty] = useState(1);
 
+	// product we want to update
+	let foundProduct;
+	// index of the product we want to update
+	let index;
+
 	const onAdd = (product, quantity) => {
 		// check if the product is already in the cart
 		const checkProductInCart = cartItems.find((item) => item.id === product.id);
@@ -36,10 +41,16 @@ export const StateContext = ({ children }) => {
 		toast.success(`${qty} ${product.name} added to the cart`);
 	};
 
-	// product we want to update
-	let foundProduct;
-	// index of the product we want to update
-	let index;
+	// Removing items
+	const onRemove = (product) => {
+		// const newCartItems = cartItems.filter((item) => item.id !== product.id);
+
+		// setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
+		// setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity);
+		setCartItems([]);
+		setQty(1);
+		setTotalQuantities(0);
+	};
 
 	// Quanity update function to add more quantities at any one time
 	const toggleCartItemQuantity = (id, value) => {
@@ -73,7 +84,7 @@ export const StateContext = ({ children }) => {
 	const decreaseQty = () => {
 		setQty((prevQty) => {
 			// quantity value cannot be lower than 1
-			if (prevQty - 1 < 1) return 1;
+			if (prevQty - 1 < 1) return 0;
 
 			return prevQty - 1;
 		});
@@ -89,6 +100,7 @@ export const StateContext = ({ children }) => {
 				increaseQty,
 				decreaseQty,
 				onAdd,
+				onRemove,
 				toggleCartItemQuantity,
 				setCartItems,
 				setTotalPrice,

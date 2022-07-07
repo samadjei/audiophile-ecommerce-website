@@ -8,6 +8,16 @@
 		align-items: center;
 	}
 
+	&__remove-all {
+		cursor: pointer;
+		font-weight: var(--font-semi-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		text-decoration-line: underline;
+		color: var(--back);
+		opacity: 0.5;
+	}
+
 	&__card {
 		background: var(--white);
 		height: 48.8rem;

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Button from '../../components/Button';
 import { useStateContext } from '../../context/StateContext';
 
 const Product = ({ image, name, desc, newProduct, price, cart }) => {
 	const { increaseQty, decreaseQty, qty } = useStateContext();
-	console.log(newProduct);
 	return (
 		<>
 			<div>

@@ -4,7 +4,6 @@ import { useStateContext } from '../../context/StateContext';
 
 const ProductCart = () => {
 	const { decreaseQty, increaseQty, qty } = useStateContext();
-	console.log(items)
 	return (
 		<div className="details__flex">
 			<div>

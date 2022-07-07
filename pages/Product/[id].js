@@ -29,6 +29,9 @@ const ProductDetail = ({ items }) => {
 	const addToCart = () => {
 		onAdd(items, qty);
 	};
+	const removeFromCart = () => {
+		onRemove(items, qty);
+	};
 	return (
 		<div className="container">
 			<div className="details">
@@ -37,7 +40,7 @@ const ProductDetail = ({ items }) => {
 				</Link>
 			</div>
 			<div className="details__flex">
-				<Product cart={addToCart} newProduct={items.new} image={items.image.mobile} name={items.name} desc={items.description} price={items.price} />
+				<Product removeItems={removeFromCart} cart={addToCart} newProduct={items.new} image={items.image.mobile} name={items.name} desc={items.description} price={items.price} />
 			</div>
 			<div className="info">
 				<div className="info__content">

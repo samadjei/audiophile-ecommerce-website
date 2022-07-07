@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const Cart = ({ open, onClose }) => {
 	const cartRef = useRef();
-	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity } = useStateContext();
+	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove } = useStateContext();
 	// if the modal is not open, don't render out any content
 	if (!open) return null;
 	return (
@@ -18,7 +18,7 @@ const Cart = ({ open, onClose }) => {
 					<h6>
 						Cart <span className="cart__items-num">({totalQuantities})</span>
 					</h6>
-					<span>Remove all</span>
+					<span className='cart__remove-all' onClick={() => onRemove(cartItems)}>Remove all</span>
 				</div>
 				<div className="cart__item">
 					<div className="cart__empty">
