@@ -1,29 +1,36 @@
-// Render Prop
 import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import TextField from './TextField';
+import * as Yup from 'yup';
 
 const CheckoutForm = () => (
 	<div className="checkout__form">
 		<Formik
 			initialValues={{
 				name: '',
-				emailAddress: '',
-				phoneNumber: '',
+				email: '',
+				phone: '',
 				address: '',
-				zipCode: '',
+				zip: '',
 				city: '',
 				country: '',
-				eMoney: false,
+				eMoney: true,
 				cashOnDelivery: false,
-				radio: '',
+				eMoneyNum: '',
+				eMoneyPin: '',
 			}}
-			onSubmit={(values, { setSubmitting }) => {
-				setTimeout(() => {
-					alert(JSON.stringify(values, null, 2));
-					setSubmitting(false);
-				}, 400);
-			}}
+			validationSchema={Yup.object({
+				name: Yup.string().required('Required'),
+				email: Yup.string().email('Wrong format').required("Required"),
+				phone: Yup.string().required('Required'),
+				address: Yup.string().required('Required'),
+				zip: Yup.string().required('Required'),
+				city: Yup.string().required('Required'),
+				eMoney: Yup.string().required('Required'),
+				country: Yup.string().required('Required'),
+				eMoneyNum: Yup.string().required('Required'),
+				eMoneyPin: Yup.string().required('Required'),
+			})}
 		>
 			{({ isSubmitting }) => (
 				<Form>
@@ -33,15 +40,15 @@ const CheckoutForm = () => (
 							<TextField label="Name" name="name" placeholder="Alexei Ward" type="text" />
 							<TextField label="Email Address" name="email" placeholder="alexei@mail.com" type="email" />
 						</div>
-						<TextField label="Phone Number" name="number" placeholder="+1 202-555-0136" type="number" />
+						<TextField label="Phone Number" name="phone" placeholder="+1 202-555-0136" type="number" />
 					</div>
 
 					<div className="field__shipping">
 						<span className="sub-title">Shipping Info</span>
 						<div>
-							<TextField className="field__input field__shipping-address" label="Address" name="adress" placeholder="1137 Williams Avenue" type="text" />
+							<TextField className="field__input field__shipping-address" label="Address" name="address" placeholder="1137 Williams Avenue" type="text" />
 							<div className="field__shipping-inner">
-								<TextField label="Zip Code" name="zipcode" placeholder="10001" type="text" />
+								<TextField label="Zip Code" name="zip" placeholder="10001" type="text" />
 								<TextField label="City" name="city" placeholder="New York" type="text" />
 							</div>
 							<div className="field__shipping-country">
@@ -66,10 +73,11 @@ const CheckoutForm = () => (
 								</div>
 							</div>
 							<div className="field__payments-number">
-								<TextField label="e-Money Number" name="eMoneyNumber" placeholder="238521993" type="text" />
-								<TextField label="e-Money PIN" name="eMoneyPin" placeholder="6891" type="text" />
+								<TextField label="e-Money Number" name="eMoneyNum" placeholder="238521993" type="number" />
+								<TextField label="e-Money PIN" name="eMoneyPin" placeholder="6891" type="number" />
 							</div>
 						</div>
+						<button type="submit">Register</button>
 					</div>
 				</Form>
 			)}

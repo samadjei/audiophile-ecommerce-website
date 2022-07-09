@@ -14,7 +14,7 @@ export const StateContext = ({ children }) => {
 	// index of the product we want to update
 	let index;
 
-	let grandTotal = 0;
+	let grandTotal;
 
 	const onAdd = (product, quantity) => {
 		// check if the product is already in the cart
@@ -51,7 +51,7 @@ export const StateContext = ({ children }) => {
 		setCartItems([]);
 		setQty(1);
 		setTotalQuantities(0);
-		setTotalPrice(0)
+		setTotalPrice(0);
 		grandTotal = 0;
 	};
 

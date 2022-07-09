@@ -32,6 +32,12 @@
 		}
 	}
 
+	&__headers {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	&__input {
 		border-radius: 0.8rem;
 		border: 1px solid var(--light-grey);
@@ -39,6 +45,10 @@
 		flex-shrink: 1;
 		flex-basis: 100%;
 		margin-top: 0.9rem;
+		&:hover,
+		&:focus {
+			border: 0.1rem solid var(--orange);
+		}
 	}
 
 	&__shipping {
@@ -51,6 +61,10 @@
 		&-country {
 			margin-top: 2.4rem;
 		}
+	}
+
+	&--error {
+		border: 0.1rem solid red;
 	}
 
 	&__payments {
@@ -111,7 +125,14 @@
 	flex-direction: row-reverse;
 	align-items: center;
 	width: 30.9rem;
-	border: 1px solid red;
+}
+
+.field__radios > * {
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		border: 0.1rem solid var(--orange);
+	}
 }
 
 .field__radios .field__input {
@@ -160,4 +181,20 @@
 	&--orange {
 		color: var(--orange);
 	}
+}
+
+.error {
+	color: red;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
 }

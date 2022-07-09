@@ -5,11 +5,11 @@ import { useStateContext } from '../../context/StateContext';
 
 const Summary = () => {
 	const cartRef = useRef();
-	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove, grandTotal } = useStateContext();
+	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove,  } = useStateContext();
 
-	const Shipping = 50;
-	const Vat = 1079;
-	grandTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
+	let Shipping = 50;
+	let Vat = 1079;
+	let grandTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
 
 
 	return (
