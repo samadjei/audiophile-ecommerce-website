@@ -6,7 +6,7 @@ const TextField = ({ label, ...props }) => {
 	return (
 		<div className='field__inputs'>
 			<label className='field--label' htmlFor={field.name}>{label}</label>
-			<input className='field__input' placeholder={field.placeholder} type="text" autoComplete="off" {...field} {...props} />
+			<input className='field__input' placeholder={field.placeholder} type={field.type} {...field} {...props} />
 		</div>
 	);
 };

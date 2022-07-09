@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import { product } from '../components/Data';
 
 const Context = createContext();
 
@@ -14,6 +13,8 @@ export const StateContext = ({ children }) => {
 	let foundProduct;
 	// index of the product we want to update
 	let index;
+
+	let grandTotal = 0;
 
 	const onAdd = (product, quantity) => {
 		// check if the product is already in the cart
@@ -42,7 +43,7 @@ export const StateContext = ({ children }) => {
 	};
 
 	// Removing items
-	const onRemove = (product) => {
+	const onRemove = () => {
 		// const newCartItems = cartItems.filter((item) => item.id !== product.id);
 
 		// setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
@@ -50,6 +51,8 @@ export const StateContext = ({ children }) => {
 		setCartItems([]);
 		setQty(1);
 		setTotalQuantities(0);
+		setTotalPrice(0)
+		grandTotal = 0;
 	};
 
 	// Quanity update function to add more quantities at any one time
@@ -97,6 +100,7 @@ export const StateContext = ({ children }) => {
 				totalPrice,
 				totalQuantities,
 				qty,
+				grandTotal,
 				increaseQty,
 				decreaseQty,
 				onAdd,

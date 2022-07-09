@@ -77,7 +77,7 @@
 	}
 
 	&__add {
-		background: var(--light-grey);
+		background: var(--grey);
 		width: 9.6rem;
 		height: 3.2rem;
 		display: flex;
@@ -98,7 +98,7 @@
 	&__increment,
 	&__decrement,
 	&__number {
-		background: var(--light-grey);
+		background: var(--grey);
 		padding: 1.3rem;
 	}
 

@@ -16,8 +16,7 @@ const CheckoutForm = () => (
 				country: '',
 				eMoney: false,
 				cashOnDelivery: false,
-				eMoneyNumber: '',
-				eMoneyPin: '',
+				radio: '',
 			}}
 			onSubmit={(values, { setSubmitting }) => {
 				setTimeout(() => {
@@ -48,14 +47,29 @@ const CheckoutForm = () => (
 							<div className="field__shipping-country">
 								<TextField label="Country" name="country" placeholder="United States" type="text" />
 							</div>
-            </div>
-            <div className="field__payments">
-              
-            </div>
-
-						{/* <button type="submit" disabled={isSubmitting}>
-							Submit
-						</button> */}
+						</div>
+						<div className="field__payments">
+							<span className="sub-title">Payment Details</span>
+							<div className="field__payments-method">
+								<div>
+									<span className="field--label">Payment method</span>
+								</div>
+								<div className="field__radios">
+									<div className="field__radios-items">
+										<Field type="radio" name="picked" value="e-Money" />
+										<label className="field__radios-text">e-Money</label>
+									</div>
+									<div className="field__radios-items">
+										<Field type="radio" name="picked" value="Cash on Delivery" />
+										<label className="field__radios-text">Cash on Delivery</label>
+									</div>
+								</div>
+							</div>
+							<div className="field__payments-number">
+								<TextField label="e-Money Number" name="eMoneyNumber" placeholder="238521993" type="text" />
+								<TextField label="e-Money PIN" name="eMoneyPin" placeholder="6891" type="text" />
+							</div>
+						</div>
 					</div>
 				</Form>
 			)}

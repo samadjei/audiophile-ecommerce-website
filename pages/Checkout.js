@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import CheckoutForm from '../components/Checkout/CheckoutForm';
+import Summary from '../components/Checkout/Summary';
 
 const Checkout = () => {
 	return (
@@ -11,10 +12,14 @@ const Checkout = () => {
 						<a className="details--back">Go back</a>
 					</Link>
 				</div>
-				<div>
+				<div className="checkout__flex">
 					<div className="checkout">
 						<h2>Checkout</h2>
 						<CheckoutForm />
+					</div>
+					<div className="summary">
+						<h6>Summary</h6>
+						<Summary />
 					</div>
 				</div>
 			</div>

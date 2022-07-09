@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
 import Button from './Button';
-import roast from 'react-hot-toast';
 import { useStateContext } from '../context/StateContext';
 import Image from 'next/image';
 
@@ -41,14 +40,14 @@ const Cart = ({ open, onClose }) => {
 										</div>
 										<div className="cart__product-details">
 											<span className="cart--name">{item.cartName}</span>
-											<span className="cart--price">${item.price}</span>
+											<span className="cart--price">${item.price.toLocaleString()}</span>
 										</div>
 										<div className="cart__toggle">
 											<div className="cart__add">
 												<span onClick={() => toggleCartItemQuantity(item.id, 'dec')} className="cart__decrement">
 													-
 												</span>
-												<span className="cart__number">{item.quantity}</span>
+												<span className="cart__number">{item.quantity.toLocaleString()}</span>
 												<span onClick={() => toggleCartItemQuantity(item.id, 'inc')} className="cart__increment">
 													+
 												</span>
@@ -64,7 +63,7 @@ const Cart = ({ open, onClose }) => {
 							</div>
 						)}
 						<Link href="/Checkout">
-							<Button className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
+							<Button onClick={onClose} className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
 								Checkout
 							</Button>
 						</Link>
