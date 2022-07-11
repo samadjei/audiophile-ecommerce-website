@@ -4,7 +4,19 @@ import { toast } from 'react-hot-toast';
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
-	const [cartItems, setCartItems] = useState([]);
+	const [cartItems, setCartItems] = useState(() => {
+		if (typeof window !== 'undefined') {
+			const localData = localStorage.getItem('cartItems');
+			// only return cartItems if the array is not empty
+			return localData ? JSON.parse(localData) : [];
+		}
+	});
+
+	// Local Storage
+	useEffect(() => {
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
+	}, [cartItems]);
+
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [totalQuantities, setTotalQuantities] = useState(0);
 	const [qty, setQty] = useState(1);

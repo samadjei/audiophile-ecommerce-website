@@ -114,6 +114,14 @@
 		letter-spacing: -0.214286px;
 		color: var(--black);
 	}
+
+	&--cash {
+		font-weight: var(--font-semi-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		color: var(--black);
+		opacity: 0.5;
+	}
 }
 
 .field__input.field__shipping-address {
@@ -197,4 +205,8 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
 	-moz-appearance: textfield;
+}
+
+.radio-hidden {
+	display: none;
 }

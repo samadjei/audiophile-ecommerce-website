@@ -16,9 +16,6 @@ const Navbar = () => {
 
 	// Cart State
 	const [cartOpen, setCartOpen] = useState(false);
-	// const openCart = () => {
-	// 	setCartOpen(true);
-	// };
 
 	return (
 		<nav className={isOpen ? 'navbar' : 'navbar'}>

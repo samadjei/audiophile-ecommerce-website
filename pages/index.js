@@ -1,6 +1,7 @@
 import Homepage from './Homepage';
 
 const Home = () => {
+	
 	return (
 		<div>
 			<Homepage />
