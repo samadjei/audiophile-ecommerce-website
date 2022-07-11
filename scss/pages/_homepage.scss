@@ -71,11 +71,8 @@
 // Select product
 .select {
 	@include container;
-	padding-top: 9.6rem;
-	padding-bottom: 9.6rem;
-	@include breakpoint(large) {
-		padding-bottom: 20rem;
-	}
+	padding-bottom: 9rem;
+
 	&__speaker {
 		background: var(--orange);
 		background-image: url('../../public/assets/home/desktop/pattern-circles.svg');
@@ -217,9 +214,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 9.6rem;
 	@include breakpoint(small) {
-		padding-bottom: 12rem;
+		margin-bottom: 12rem;
 		flex-direction: column-reverse;
 		gap: 4rem;
 	}
@@ -227,7 +223,6 @@
 		flex-direction: row;
 		gap: 12.5rem;
 	}
-	padding-bottom: 20rem;
 	&__content {
 		@include breakpoint(small) {
 			width: 100%;
@@ -245,8 +240,10 @@
 
 	&--text {
 		font-weight: var(--font-semi-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
 		opacity: 0.5;
-		padding-top: 3.2rem;
+		margin-top: 3.2rem;
 	}
 
 	// Images
@@ -275,5 +272,12 @@
 		@include breakpoint(medium) {
 			display: none;
 		}
+	}
+}
+
+.home .gear {
+	margin-top: 9rem;
+	@include breakpoint(medium) {
+		margin-top: 3rem;
 	}
 }

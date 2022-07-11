@@ -6,7 +6,7 @@ import SelectProduct from '../components/Home/SelectProduct';
 
 const Homepage = () => {
 	return (
-		<main>
+		<main className='home'>
 			<Hero />
 			<div className="container">
 				<Categories />

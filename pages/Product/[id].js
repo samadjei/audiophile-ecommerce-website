@@ -40,14 +40,23 @@ const ProductDetail = ({ items }) => {
 				</Link>
 			</div>
 			<div className="details__flex">
-				<Product removeItems={removeFromCart} cart={addToCart} newProduct={items.new} image={items.image.mobile} name={items.name} desc={items.description} price={items.price} />
+				<Product
+					removeItems={removeFromCart}
+					cart={addToCart}
+					newProduct={items.new}
+					imageDesktop={items.image.desktop}
+					imageTablet={items.image.tablet}
+					imageMobile={items.image.mobile}
+					name={items.name}
+					desc={items.description}
+					price={items.price} />
 			</div>
 			<div className="info">
 				<div className="info__content">
 					<h2 className="info--title">Features</h2>
 					<p className='info--desc'>{items.features}</p>
 				</div>
-				<div>
+				<div className='info__box'>
 					<h2 className="info--title">In the box</h2>
 					<div className="info__list">
 						{items.includes.map((list, index) => {

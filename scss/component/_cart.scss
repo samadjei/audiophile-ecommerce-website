@@ -20,13 +20,22 @@
 
 	&__card {
 		background: var(--white);
-		height: 48.8rem;
-		width: 37.7rem;
 		position: absolute;
-		right: 16.5rem;
+		top: 14rem;
+		left: 4rem;
 		border-radius: 0.8rem;
 		padding: 3.1rem;
 		z-index: 1000;
+		@include breakpoint(large) {
+			right: 16.5rem;
+			top: 15rem;
+		}
+		@include breakpoint(medium) {
+			right: 6rem;
+			top: 15rem;
+			height: 48.8rem;
+			width: 37.7rem;
+		}
 	}
 
 	&__empty {
