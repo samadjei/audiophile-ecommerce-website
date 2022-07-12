@@ -68,6 +68,8 @@ export const StateContext = ({ children }) => {
 		grandTotal = 0;
 	};
 
+	
+
 	// Quanity update function to add more quantities at any one time
 	const toggleCartItemQuantity = (id, value) => {
 		// go through all the cart items and find an individual cart item

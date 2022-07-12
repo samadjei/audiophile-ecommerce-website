@@ -3,13 +3,16 @@ import { Formik, Form, Field } from 'formik';
 import TextField from './TextField';
 import * as Yup from 'yup';
 import Button from '../Button';
+import SuccessModal from './SuccessModal';
 
 const CheckoutForm = () => {
 	const [checked, setChecked] = useState();
+	// Success State
+	const [successOpen, setSuccessOpen] = useState(false);
 	const handleChecked = (e) => {
 		setChecked(e.target.value);
-		console.log(e.target.value);
 	};
+
 	return (
 		<div className="checkout__form">
 			<Formik
@@ -94,7 +97,7 @@ const CheckoutForm = () => {
 								) : null}
 							</div>
 							<div className="field__button">
-								<Button className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
+								<Button onClick={() => setSuccessOpen(true)} className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
 									Continue & Pay
 								</Button>
 							</div>
@@ -102,6 +105,7 @@ const CheckoutForm = () => {
 					</Form>
 				)}
 			</Formik>
+			<SuccessModal open={successOpen} onClose={() => setSuccessOpen(false)} />
 		</div>
 	);
 };

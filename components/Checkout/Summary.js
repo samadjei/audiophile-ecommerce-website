@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { useStateContext } from '../../context/StateContext';
 
 const Summary = () => {
-	const cartRef = useRef();
 	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove } = useStateContext();
 
 	let Shipping = 50;
 	let Vat = 1079;
 	let grandTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
+	
 
 	return (
 		<div>

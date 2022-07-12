@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from './Button';
-import { product } from './Data';
+import { Button } from './Button';
+
 
 const Others = ({ others }) => {
 	return (
