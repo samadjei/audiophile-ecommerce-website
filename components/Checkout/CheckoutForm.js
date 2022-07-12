@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import TextField from './TextField';
 import * as Yup from 'yup';
+import Button from '../Button';
 
 const CheckoutForm = () => {
-	const [checked, setChecked] = useState('.radio-hidden');
-	const handleChecked = () => {
-		setChecked('');
+	const [checked, setChecked] = useState();
+	const handleChecked = (e) => {
+		setChecked(e.target.value);
+		console.log(e.target.value);
 	};
 	return (
 		<div className="checkout__form">
@@ -19,8 +21,8 @@ const CheckoutForm = () => {
 					zip: '',
 					city: '',
 					country: '',
-					eMoney: true,
-					cashOnDelivery: false,
+					eMoney: '',
+					cashOnDelivery: '',
 					eMoneyNum: '',
 					eMoneyPin: '',
 				}}
@@ -45,7 +47,9 @@ const CheckoutForm = () => {
 								<TextField label="Name" name="name" placeholder="Alexei Ward" type="text" />
 								<TextField label="Email Address" name="email" placeholder="alexei@mail.com" type="email" />
 							</div>
-							<TextField label="Phone Number" name="phone" placeholder="+1 202-555-0136" type="number" />
+							<div className="field__billing-number">
+								<TextField label="Phone Number" name="phone" placeholder="+1 202-555-0136" type="number" />
+							</div>
 						</div>
 
 						<div className="field__shipping">
@@ -66,29 +70,34 @@ const CheckoutForm = () => {
 									<div>
 										<span className="field--label">Payment method</span>
 									</div>
-									<div className="field__radios">
+									<div onChange={handleChecked} className="field__radios">
 										<div className="field__radios-items">
-											<Field onChange={handleChecked} type="checkbox" name="picked" value="e-Money" />
+											<Field type="radio" name="picked" value="e-Money" />
 											<label className="field__radios-text">e-Money</label>
 										</div>
 										<div className="field__radios-items">
-											<Field onChange={handleChecked} type="checkbox" name="picked" value="Cash on Delivery" />
+											<Field type="radio" name="picked" value="Cash on Delivery" />
 											<label className="field__radios-text">Cash on Delivery</label>
 										</div>
 									</div>
 								</div>
-								{checked ? (
+								{checked == 'e-Money' ? (
 									<div className="field__payments-number">
 										<TextField checked={handleChecked} label="e-Money Number" name="eMoneyNum" placeholder="238521993" type="number" />
 										<TextField label="e-Money PIN" name="eMoneyPin" placeholder="6891" type="number" />
 									</div>
-								) : (
+								) : null}
+								{checked == 'Cash on Delivery' ? (
 									<div>
 										<p className="field--cash">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
 									</div>
-								)}
+								) : null}
 							</div>
-							<button type="submit">Register</button>
+							<div className="field__button">
+								<Button className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
+									Continue & Pay
+								</Button>
+							</div>
 						</div>
 					</Form>
 				)}

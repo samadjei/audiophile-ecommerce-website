@@ -38,10 +38,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 12.4rem;
 		flex-direction: column;
+		gap: 3.2rem;
 		@include breakpoint(medium) {
 			flex-direction: row;
+			gap: 12.4rem;
 		}
 	}
 	&__content {

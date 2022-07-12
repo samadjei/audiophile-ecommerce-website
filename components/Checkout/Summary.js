@@ -1,16 +1,14 @@
 import React, { useRef } from 'react';
-import Button from '../Button';
 import Image from 'next/image';
 import { useStateContext } from '../../context/StateContext';
 
 const Summary = () => {
 	const cartRef = useRef();
-	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove,  } = useStateContext();
+	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove } = useStateContext();
 
 	let Shipping = 50;
 	let Vat = 1079;
 	let grandTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
-
 
 	return (
 		<div>
@@ -51,9 +49,6 @@ const Summary = () => {
 				<span className="cart__total--text">Grand Total</span>
 				<span className="cart__total--price summary--orange">${grandTotal}</span>
 			</div>
-			<Button className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
-				Continue & Pay
-			</Button>
 		</div>
 	);
 };

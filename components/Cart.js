@@ -7,6 +7,7 @@ import Image from 'next/image';
 const Cart = ({ open, onClose }) => {
 	const cartRef = useRef();
 	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove } = useStateContext();
+	// console.log(cartItems[0].image.mobile);
 	// if the modal is not open, don't render out any content
 	if (!open) return null;
 	return (
