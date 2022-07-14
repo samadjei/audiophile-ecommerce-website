@@ -41,9 +41,16 @@ const CheckoutForm = () => {
 					eMoneyNum: Yup.string().required('Required'),
 					eMoneyPin: Yup.string().required('Required'),
 				})}
+				onSubmit={(values, { setSubmitting, resetForm }) => {
+					setTimeout(() => {
+						// resetForm();
+						setSubmitting(false);
+						setSuccessOpen(true);
+					}, 400);
+				}}
 			>
-				{({ isSubmitting }) => (
-					<Form>
+				{({ isSubmitting, handleSubmit }) => (
+					<Form onSubmit={handleSubmit}>
 						<span className="sub-title">Billing Details</span>
 						<div className="field__billing">
 							<div className="field__billing-items">
@@ -97,7 +104,7 @@ const CheckoutForm = () => {
 								) : null}
 							</div>
 							<div className="field__button">
-								<Button onClick={() => setSuccessOpen(true)} className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
+								<Button type="submit" className="btn" buttonStyle="btn--primary" buttonSize="btn--cart">
 									Continue & Pay
 								</Button>
 							</div>
