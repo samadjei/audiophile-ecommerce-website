@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useStateContext } from '../../context/StateContext';
-import Button from '../Button';
+import Button from '../Button.js';
 import Link from 'next/link';
 import Image from 'next/image';
 

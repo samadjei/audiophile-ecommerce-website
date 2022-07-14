@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import TextField from './TextField';
 import * as Yup from 'yup';
-import Button from '../Button';
+import Button from '../Button.js';
 import SuccessModal from './SuccessModal';
 
 const CheckoutForm = () => {

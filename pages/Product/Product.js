@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Button from '../../components/Button';
+import Button from '../../components/Button.js';
 import { useStateContext } from '../../context/StateContext';
 
 const Product = ({ imageDesktop, imageTablet, imageMobile, name, desc, newProduct, price, cart }) => {

@@ -1,7 +1,7 @@
 import PageHeaders from '../components/PageHeaders';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../components/Button';
+import Button from '../components/Button.js';
 import Categories from '../components/Categories';
 import AudioGear from '../components/Home/AudioGear';
 
