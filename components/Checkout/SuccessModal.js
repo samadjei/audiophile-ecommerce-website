@@ -4,20 +4,22 @@ import Button from '../Button.js';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const SuccessModal = ({ open, onClose }) => {
-	const cartRef = useRef();
+// const SuccessModal = ({ open, onClose }) => {
+const SuccessModal = () => {
+	// const cartRef = useRef();
 	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove, grandTotal } = useStateContext();
 
-	// if the modal is not open, don't render out any content
-	if (!open) return null;
-	console.log(grandTotal);
+	// // if the modal is not open, don't render out any content
+	// if (!open) return null;
+	// console.log(grandTotal);
 
-	const back = () => {
-		onClose();
-	};
+	// const back = () => {
+	// 	onClose();
+	// };
 
 	return (
-		<div ref={cartRef}>
+		// <div ref={cartRef}>
+		<div>
 			<div className="cart__overlay"></div>
 			<div className="success">
 				<h3 className="success--title">Thank you for your order</h3>

@@ -71,7 +71,7 @@
 // Select product
 .select {
 	@include container;
-	padding-bottom: 9rem;
+	margin-bottom: 9rem;
 
 	&__speaker {
 		background: var(--orange);
@@ -90,8 +90,13 @@
 			padding-right: 2.4rem;
 			padding-left: 2.4rem;
 			height: 60rem;
+			margin-top: 12rem;
+		}
+		@include breakpoint(large) {
+			margin-top: 16.8rem;
 		}
 		@include breakpoint(medium) {
+			margin-top: 9.6rem;
 			height: 56rem;
 			gap: 13.9rem;
 			flex-direction: row;

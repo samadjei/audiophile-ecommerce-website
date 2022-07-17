@@ -12,6 +12,7 @@ const Footer = () => {
 				<div className="footer__left">
 					<div className='footer__top'>
 						<div className="footer__logo">
+							<div className="footer__logo-orange"></div>
 							<Image src="/assets/shared/desktop/logo.svg" alt="Audiophile Logo" width={143} height={25} />
 						</div>
 						<ul className="footer__links">

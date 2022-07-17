@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import CheckoutForm from '../components/Checkout/CheckoutForm';
 import Summary from '../components/Checkout/Summary';
+import CheckoutForm from '../components/Checkout/CheckoutForm';
 
 const Checkout = () => {
 	return (
