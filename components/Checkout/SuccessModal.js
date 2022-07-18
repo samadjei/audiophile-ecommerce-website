@@ -9,7 +9,8 @@ const productItems = 1;
 const SuccessModal = () => {
 	const { totalPrice, totalQuantities, cartItems, onRemove, grandTotal, Shipping, Vat } = useStateContext();
 
-	grandTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
+	let summaryTotal = grandTotal;
+	summaryTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
 
 	const [next, setNext] = useState(productItems);
 	const handleMoreImage = () => {
@@ -36,7 +37,7 @@ const SuccessModal = () => {
 											<span className="cart--price">${item.price}</span>
 										</div>
 										<div className="cart__toggle">
-											<span className='success--quantity'>x{item.quantity}</span>
+											<span className="success--quantity">x{item.quantity}</span>
 										</div>
 									</div>
 								</div>
@@ -50,7 +51,7 @@ const SuccessModal = () => {
 					</div>
 					<div className="success__total">
 						<span className="success__total-text">Grand Total</span>
-						<h6 className="success__total-number">${grandTotal}</h6>
+						<h6 className="success__total-number">${summaryTotal}</h6>
 					</div>
 				</div>
 				<div>

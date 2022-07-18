@@ -3,9 +3,11 @@ import Image from 'next/image';
 import { useStateContext } from '../../context/StateContext';
 
 const Summary = () => {
-	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, grandTotal, Shipping, Vat } = useStateContext();
+	const { totalPrice, cartItems, toggleCartItemQuantity, grandTotal, Shipping, Vat } = useStateContext();
 
-	grandTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
+	let summaryTotal = grandTotal
+
+	summaryTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
 
 	return (
 		<div>
@@ -44,7 +46,7 @@ const Summary = () => {
 			</div>
 			<div className="summary__text summary__grand-total">
 				<span className="cart__total--text">Grand Total</span>
-				<span className="cart__total--price summary--orange">${grandTotal}</span>
+				<span className="cart__total--price summary--orange">${summaryTotal}</span>
 			</div>
 		</div>
 	);
