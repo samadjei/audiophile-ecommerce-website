@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
-import  Button  from './Button.js';
+import Button from './Button.js';
 import { useStateContext } from '../context/StateContext';
 import Image from 'next/image';
 
@@ -60,7 +60,7 @@ const Cart = ({ open, onClose }) => {
 						{cartItems.length >= 1 && (
 							<div className="cart__total">
 								<span className="cart__total--text">Total</span>
-								<span className="cart__total--price">${totalPrice}</span>
+								<span className="cart__total--price">${totalPrice.toLocaleString()}</span>
 							</div>
 						)}
 						<Link href="/Checkout">

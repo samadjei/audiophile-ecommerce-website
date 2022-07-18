@@ -1,22 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useStateContext } from '../../context/StateContext';
 import Button from '../Button.js';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// const SuccessModal = ({ open, onClose }) => {
+const productItems = 1;
+
 const SuccessModal = () => {
-	// const cartRef = useRef();
-	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove, grandTotal } = useStateContext();
+	const { totalPrice, totalQuantities, cartItems, onRemove, grandTotal, Shipping, Vat } = useStateContext();
 
-	// // if the modal is not open, don't render out any content
-	// if (!open) return null;
-	// console.log(grandTotal);
+	grandTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
 
-	// const back = () => {
-	// 	onClose();
-	// };
-
+	const [next, setNext] = useState(productItems);
+	const handleMoreImage = () => {
+		setNext(next + productItems);
+	};
 	return (
 		// <div ref={cartRef}>
 		<div>
@@ -27,7 +25,7 @@ const SuccessModal = () => {
 				<div className="success__items">
 					<div className="success__products">
 						{cartItems.length >= 1 &&
-							cartItems.map((item) => (
+							cartItems?.slice(0, next)?.map((item) => (
 								<div key={item.id}>
 									<div className="cart__product">
 										<div className="cart__images">
@@ -38,15 +36,21 @@ const SuccessModal = () => {
 											<span className="cart--price">${item.price}</span>
 										</div>
 										<div className="cart__toggle">
-											<span>x{item.quantity}</span>
+											<span className='success--quantity'>x{item.quantity}</span>
 										</div>
 									</div>
 								</div>
 							))}
+						{next < cartItems.length && (
+							<div onClick={handleMoreImage}>
+								<hr className="success__line"></hr>
+								<p className="success__more">and {totalQuantities} other items(s)</p>
+							</div>
+						)}
 					</div>
 					<div className="success__total">
-						<span className='success__total-text'>Grand Total</span>
-						<h6 className='success__total-number'>$5,446</h6>
+						<span className="success__total-text">Grand Total</span>
+						<h6 className="success__total-number">${grandTotal}</h6>
 					</div>
 				</div>
 				<div>

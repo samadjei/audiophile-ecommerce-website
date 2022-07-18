@@ -3,24 +3,24 @@ import { toast } from 'react-hot-toast';
 
 const Context = createContext();
 
+let cartFromLocalStorage;
+let quantityFromLocalStorage;
+// Fetch cartItems back when the application loads
+if (typeof window !== 'undefined') {
+	// Perform localStorage action
+	cartFromLocalStorage = JSON.parse(localStorage.getItem('cartItems') || '[]');
+	quantityFromLocalStorage = JSON.parse(localStorage.getItem('qty') || 1);
+}
+
 export const StateContext = ({ children }) => {
-	const [cartItems, setCartItems] = useState([]);
-	// const [cartItems, setCartItems] = useState(() => {
-	// 	if (typeof window !== 'undefined') {
-	// 		const localData = localStorage.getItem('cartItems');
-	// 		// only return cartItems if the array is not empty
-	// 		return localData ? JSON.parse(localData) : [];
-	// 	}
-	// });
-
-	// Local Storage
-	// useEffect(() => {
-	// 	localStorage.setItem('cartItems', JSON.stringify(cartItems));
-	// }, [cartItems]);
-
+	const [cartItems, setCartItems] = useState(cartFromLocalStorage);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [totalQuantities, setTotalQuantities] = useState(0);
 	const [qty, setQty] = useState(1);
+
+	useEffect(() => {
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
+	}, [cartItems]);
 
 	// product we want to update
 	let foundProduct;
@@ -28,6 +28,8 @@ export const StateContext = ({ children }) => {
 	let index;
 
 	let grandTotal;
+	let Shipping = 50;
+	let Vat = 1079;
 
 	const onAdd = (product, quantity) => {
 		// check if the product is already in the cart
@@ -67,8 +69,6 @@ export const StateContext = ({ children }) => {
 		setTotalPrice(0);
 		grandTotal = 0;
 	};
-
-	
 
 	// Quanity update function to add more quantities at any one time
 	const toggleCartItemQuantity = (id, value) => {
@@ -116,6 +116,8 @@ export const StateContext = ({ children }) => {
 				totalQuantities,
 				qty,
 				grandTotal,
+				Shipping,
+				Vat,
 				increaseQty,
 				decreaseQty,
 				onAdd,
