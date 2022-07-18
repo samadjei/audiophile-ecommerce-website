@@ -6,11 +6,11 @@ const Context = createContext();
 let cartFromLocalStorage;
 let quantityFromLocalStorage;
 // Fetch cartItems back when the application loads
-if (typeof window !== 'undefined') {
-	// Perform localStorage action
-	cartFromLocalStorage = JSON.parse(localStorage.getItem('cartItems') || '[]');
-	quantityFromLocalStorage = JSON.parse(localStorage.getItem('qty') || 1);
-}
+// if (typeof window !== 'undefined') {
+// 	// Perform localStorage action
+// 	cartFromLocalStorage = JSON.parse(localStorage.getItem('cartItems') || '[]');
+// 	quantityFromLocalStorage = JSON.parse(localStorage.getItem('qty') || 1);
+// }
 
 export const StateContext = ({ children }) => {
 	const [cartItems, setCartItems] = useState(cartFromLocalStorage);
@@ -18,9 +18,9 @@ export const StateContext = ({ children }) => {
 	const [totalQuantities, setTotalQuantities] = useState(0);
 	const [qty, setQty] = useState(1);
 
-	useEffect(() => {
-		localStorage.setItem('cartItems', JSON.stringify(cartItems));
-	}, [cartItems]);
+	// useEffect(() => {
+	// 	localStorage.setItem('cartItems', JSON.stringify(cartItems));
+	// }, [cartItems]);
 
 	// product we want to update
 	let foundProduct;

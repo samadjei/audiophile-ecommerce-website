@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Link from 'next/link';
 import Summary from '../components/Checkout/Summary';
 import CheckoutForm from '../components/Checkout/CheckoutForm';
