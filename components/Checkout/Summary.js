@@ -3,11 +3,10 @@ import Image from 'next/image';
 import { useStateContext } from '../../context/StateContext';
 
 const Summary = () => {
-	const { totalPrice, cartItems, toggleCartItemQuantity, grandTotal, Shipping, Vat } = useStateContext();
+	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove, grandTotal, VAT, Shipping } = useStateContext();
+	let summaryTotal = grandTotal;
 
-	let summaryTotal = grandTotal
-
-	summaryTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
+	summaryTotal = parseFloat(totalPrice + VAT + Shipping).toLocaleString();
 
 	return (
 		<div>
@@ -21,10 +20,10 @@ const Summary = () => {
 								</div>
 								<div className="cart__product-details">
 									<span className="cart--name">{item.cartName}</span>
-									<span className="cart--price">${item.price.toLocaleString()}</span>
+									<span className="cart--price">${item.price}</span>
 								</div>
 								<div className="cart__toggle">
-									<span>x{item.quantity}</span>
+									<span className='cart__summary-quantity'>x{item.quantity}</span>
 								</div>
 							</div>
 						</div>
@@ -37,11 +36,11 @@ const Summary = () => {
 				</div>
 				<div className="summary__text">
 					<span className="cart__total--text">Shipping</span>
-					<span className="cart__total--price">${Shipping}</span>
+					<span className="cart__total--price">${Shipping.toLocaleString()}</span>
 				</div>
 				<div className="summary__text">
 					<span className="cart__total--text">Vat (included)</span>
-					<span className="cart__total--price">${Vat.toLocaleString()}</span>
+					<span className="cart__total--price">${VAT.toLocaleString()}</span>
 				</div>
 			</div>
 			<div className="summary__text summary__grand-total">

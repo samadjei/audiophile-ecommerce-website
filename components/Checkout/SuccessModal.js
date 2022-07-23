@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useStateContext } from '../../context/StateContext';
 import Button from '../Button.js';
 import Link from 'next/link';
@@ -7,17 +7,18 @@ import Image from 'next/image';
 const productItems = 1;
 
 const SuccessModal = () => {
-	const { totalPrice, totalQuantities, cartItems, onRemove, grandTotal, Shipping, Vat } = useStateContext();
+
+	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove, grandTotal, VAT, Shipping } = useStateContext();
 
 	let summaryTotal = grandTotal;
-	summaryTotal = parseFloat(totalPrice + Vat + Shipping).toLocaleString();
+	summaryTotal = parseFloat(totalPrice + VAT + Shipping).toLocaleString();
 
 	const [next, setNext] = useState(productItems);
 	const handleMoreImage = () => {
 		setNext(next + productItems);
 	};
+
 	return (
-		// <div ref={cartRef}>
 		<div>
 			<div className="cart__overlay"></div>
 			<div className="success">
@@ -37,7 +38,7 @@ const SuccessModal = () => {
 											<span className="cart--price">${item.price}</span>
 										</div>
 										<div className="cart__toggle">
-											<span className="success--quantity">x{item.quantity}</span>
+											<span lassName="success--quantity">x{item.quantity}</span>
 										</div>
 									</div>
 								</div>

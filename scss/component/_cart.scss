@@ -141,4 +141,13 @@
 			color: #000000;
 		}
 	}
+
+	&__summary-quantity {
+		font-weight: var(--font-bold);
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+		text-align: right;
+		color: var(--black);
+		opacity: 0.5;
+	}
 }

@@ -4,6 +4,7 @@ import Button from '../Button.js';
 
 function App() {
 	const initialValues = {
+		errorInput: '',
 		name: '',
 		email: '',
 		phone: '',
@@ -41,12 +42,13 @@ function App() {
 		if (Object.keys(formErrors).length === 0 && isSubmit) {
 			console.log(formValues);
 		}
-	}, [formErrors]);
+	}, [formErrors, formValues, isSubmit]);
 	const validate = (values) => {
 		const errors = {};
 		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 		if (!values.name) {
 			errors.name = 'Name is required!';
+			errors.errorInput = 'className="field__input field__error"';
 		}
 		if (!values.email) {
 			errors.email = 'Email is required!';
@@ -84,7 +86,7 @@ function App() {
 						<div className="field__inputs">
 							<div className="field__headers">
 								<label className="field--label">Name</label>
-								<p className="field--label">{formErrors.name}</p>
+								<p className="field--label error">{formErrors.name}</p>
 							</div>
 							<input className="field__input" type="text" name="name" placeholder="Name" defaultValue={formValues.name} onChange={handleChange} />
 						</div>
@@ -92,7 +94,7 @@ function App() {
 						<div className="field__inputs">
 							<div className="field__headers">
 								<label className="field--label">Email</label>
-								<p className="field--label">{formErrors.email}</p>
+								<p className="field--label error">{formErrors.email}</p>
 							</div>
 							<input className="field__input" type="text" name="email" placeholder="Email" defaultValue={formValues.email} onChange={handleChange} />
 						</div>
@@ -100,7 +102,7 @@ function App() {
 					<div className="field__width">
 						<div className="field__headers">
 							<label className="field--label">Phone Number</label>
-							<p className="field--label">{formErrors.phone}</p>
+							<p className="field--label error">{formErrors.phone}</p>
 						</div>
 						<input className="field__input" type="number" name="phone" placeholder="Phone" defaultValue={formValues.phone} onChange={handleChange} />
 					</div>
@@ -111,7 +113,7 @@ function App() {
 					<div className="field__inputs field__address">
 						<div className="field__headers">
 							<label className="field--label">Address</label>
-							<p className="field--label">{formErrors.address}</p>
+							<p className="field--label error">{formErrors.address}</p>
 						</div>
 						<input className="field__input field__shipping-address" type="text" name="address" placeholder="Address" defaultValue={formValues.address} onChange={handleChange} />
 					</div>
@@ -119,14 +121,14 @@ function App() {
 						<div className="field">
 							<div className="field__headers">
 								<label className="field--label">Zip Code</label>
-								<p className="field--label">{formErrors.zip}</p>
+								<p className="field--label error">{formErrors.zip}</p>
 							</div>
 							<input className="field__input" type="number" name="zip" placeholder="Zip" defaultValue={formValues.zip} onChange={handleChange} />
 						</div>
 						<div>
 							<div className="field__headers">
 								<label className="field--label">City</label>
-								<p className="field--label">{formErrors.city}</p>
+								<p className="field--label error">{formErrors.city}</p>
 							</div>
 							<input className="field__input" type="text" name="city" placeholder="New York" defaultValue={formValues.city} onChange={handleChange} />
 						</div>
@@ -134,7 +136,7 @@ function App() {
 					<div className="field__width">
 						<div className="field__headers">
 							<label className="field--label">Country</label>
-							<p className="field--label">{formErrors.country}</p>
+							<p className="field--label error">{formErrors.country}</p>
 						</div>
 						<input className="field__input" type="text" name="country" placeholder="Country" defaultValue={formValues.country} onChange={handleChange} />
 					</div>

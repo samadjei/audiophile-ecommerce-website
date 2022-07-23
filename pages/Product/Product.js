@@ -19,7 +19,7 @@ const Product = ({ imageDesktop, imageTablet, imageMobile, name, desc, newProduc
 				{newProduct ? <span className="overline">New Product</span> : ''}
 				<h2 className="details--name">{name}</h2>
 				<p className="details--description">{desc}</p>
-				<h6 className="details--price">${price}</h6>
+				<h6 className="details--price">${price.toLocaleString()}</h6>
 				<div className="details__cart">
 					<div className="details__add">
 						<span onClick={decreaseQty} className="details__decrement">
