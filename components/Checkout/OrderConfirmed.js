@@ -7,6 +7,13 @@ import Image from 'next/image';
 const OrderConfirmed = ({ open, onClose }) => {
 	const cartRef = useRef();
 	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove } = useStateContext();
+
+	const example = undefined;
+
+	// ✅ Using optional chaining ?.
+	const result1 = example?.toLocaleString('en-US') || '';
+	console.log(result1); // 👉️ ""
+
 	// if the modal is not open, don't render out any content
 	if (!open) return null;
 	return (
@@ -47,7 +54,7 @@ const OrderConfirmed = ({ open, onClose }) => {
 												<span onClick={() => toggleCartItemQuantity(item.id, 'dec')} className="cart__decrement">
 													-
 												</span>
-												<span className="cart__number">{item.quantity.toLocaleString()}</span>
+												<span className="cart__number">{item.quantity}</span>
 												<span onClick={() => toggleCartItemQuantity(item.id, 'inc')} className="cart__increment">
 													+
 												</span>
@@ -59,7 +66,7 @@ const OrderConfirmed = ({ open, onClose }) => {
 						{cartItems.length >= 1 && (
 							<div className="cart__total">
 								<span className="cart__total--text">Total</span>
-								<span className="cart__total--price">${totalPrice}</span>
+								<span className="cart__total--price">${totalPrice.toLocaleString()}</span>
 							</div>
 						)}
 						<Link href="/Checkout">
@@ -75,4 +82,3 @@ const OrderConfirmed = ({ open, onClose }) => {
 };
 
 export default OrderConfirmed;
-

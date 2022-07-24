@@ -7,11 +7,10 @@ import Image from 'next/image';
 const productItems = 1;
 
 const SuccessModal = () => {
-
 	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove, grandTotal, VAT, Shipping } = useStateContext();
 
 	let summaryTotal = grandTotal;
-	summaryTotal = parseFloat(totalPrice + VAT + Shipping).toLocaleString();
+	summaryTotal = parseFloat(totalPrice + VAT + Shipping);
 
 	const [next, setNext] = useState(productItems);
 	const handleMoreImage = () => {
@@ -35,7 +34,7 @@ const SuccessModal = () => {
 										</div>
 										<div className="cart__product-details">
 											<span className="cart--name">{item.cartName}</span>
-											<span className="cart--price">${item.price}</span>
+											<span className="cart--price">${item.price.toLocaleString()}</span>
 										</div>
 										<div className="cart__toggle">
 											<span lassName="success--quantity">x{item.quantity}</span>
@@ -52,7 +51,7 @@ const SuccessModal = () => {
 					</div>
 					<div className="success__total">
 						<span className="success__total-text">Grand Total</span>
-						<h6 className="success__total-number">${summaryTotal}</h6>
+						<h6 className="success__total-number">${summaryTotal.toLocaleString()}</h6>
 					</div>
 				</div>
 				<div>

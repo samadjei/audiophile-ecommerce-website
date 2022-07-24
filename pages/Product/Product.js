@@ -5,6 +5,8 @@ import { useStateContext } from '../../context/StateContext';
 
 const Product = ({ imageDesktop, imageTablet, imageMobile, name, desc, newProduct, price, cart }) => {
 	const { increaseQty, decreaseQty, qty } = useStateContext();
+	const result = price ? price.toLocaleString() : price;
+
 	return (
 		<>
 			<div>
@@ -19,7 +21,7 @@ const Product = ({ imageDesktop, imageTablet, imageMobile, name, desc, newProduc
 				{newProduct ? <span className="overline">New Product</span> : ''}
 				<h2 className="details--name">{name}</h2>
 				<p className="details--description">{desc}</p>
-				<h6 className="details--price">${price.toLocaleString()}</h6>
+				<h6 className="details--price">${result}</h6>
 				<div className="details__cart">
 					<div className="details__add">
 						<span onClick={decreaseQty} className="details__decrement">

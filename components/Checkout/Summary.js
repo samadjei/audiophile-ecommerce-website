@@ -6,7 +6,7 @@ const Summary = () => {
 	const { totalPrice, totalQuantities, cartItems, toggleCartItemQuantity, onRemove, grandTotal, VAT, Shipping } = useStateContext();
 	let summaryTotal = grandTotal;
 
-	summaryTotal = parseFloat(totalPrice + VAT + Shipping).toLocaleString();
+	summaryTotal = parseFloat(totalPrice + VAT + Shipping);
 
 	return (
 		<div>
@@ -20,10 +20,10 @@ const Summary = () => {
 								</div>
 								<div className="cart__product-details">
 									<span className="cart--name">{item.cartName}</span>
-									<span className="cart--price">${item.price}</span>
+									<span className="cart--price">${item.price.toLocaleString()}</span>
 								</div>
 								<div className="cart__toggle">
-									<span className='cart__summary-quantity'>x{item.quantity}</span>
+									<span className="cart__summary-quantity">x{item.quantity}</span>
 								</div>
 							</div>
 						</div>
